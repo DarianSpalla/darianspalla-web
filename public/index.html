@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="foto.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darian Roy Spalla</title>
+<meta name="description" content="Darian Roy Spalla. Coaching de vida, coaching inmobiliario y liderazgo cristiano. Conocé los programas y el espacio de acompañamiento personal.">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet"></noscript>
+<style>
+:root {
+  --bg: #0C0C0E;
+  --bg2: #111115;
+  --bg3: #16161B;
+  --gold: #C8A55A;
+  --gold2: #E8C97A;
+  --gold3: #9A7A3A;
+  --text: #F0EDE8;
+  --muted: #7A7870;
+  --border: rgba(200,165,90,0.15);
+  --border2: rgba(200,165,90,0.08);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 20px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(12,12,14,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border2);
+  transition: padding 0.3s;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  padding: 9px 22px;
+  border: 1px solid var(--gold3);
+  border-radius: 100px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: all 0.2s;
+  font-weight: 400;
+}
+.nav-cta:hover { background: var(--gold); color: var(--bg); }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 24px; height: 1.5px; background: var(--text); transition: all 0.3s; display: block; }
+.mobile-menu {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--bg);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 32px;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-close {
+  position: absolute; top: 24px; right: 32px;
+  font-size: 28px; cursor: pointer; color: var(--muted);
+  background: none; border: none;
+}
+
+/* HERO */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 120px 48px 80px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(200,165,90,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(200,165,90,0.04) 0%, transparent 60%);
+}
+.hero-lines {
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(200,165,90,0.03) 80px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(200,165,90,0.03) 80px);
+}
+.hero-inner {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+}
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+.hero-label::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--gold);
+}
+.hero-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(48px, 8vw, 88px);
+  font-weight: 300;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  
+  animation: fadeUp 0.8s 0.4s forwards;
+}
+.hero-name em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+  
+  animation: fadeUp 0.8s 0.6s forwards;
+}
+.role-pill {
+  padding: 6px 16px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  font-weight: 300;
+}
+.hero-bio {
+  max-width: 560px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(240,237,232,0.65);
+  margin-bottom: 48px;
+  
+  animation: fadeUp 0.8s 0.8s forwards;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  
+  animation: fadeUp 0.8s 1s forwards;
+}
+.btn-gold {
+  padding: 14px 36px;
+  background: var(--gold);
+  color: var(--bg);
+  border: none;
+  border-radius: 100px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-gold:hover { background: var(--gold2); transform: translateY(-2px); }
+.btn-outline {
+  padding: 14px 36px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(240,237,232,0.2);
+  border-radius: 100px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  
+  animation: fadeUp 0.8s 1.4s forwards;
+}
+.scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollLine 2s infinite;
+}
+.scroll-text {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* SOBRE MI */
+#sobre {
+  padding: 120px 48px;
+  position: relative;
+}
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--gold);
+}
+.section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 300;
+  line-height: 1.15;
+  margin-bottom: 48px;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+  margin-bottom: 0;
+}
+.sobre-text p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: rgba(240,237,232,0.7);
+  margin-bottom: 20px;
+}
+.sobre-text p:last-child { margin-bottom: 0; }
+.sobre-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 56px;
+}
+.stat-box {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.stat-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.stat-box:hover { border-color: rgba(200,165,90,0.4); }
+.stat-box:hover::before { opacity: 1; }
+.stat-num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 42px;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+/* COACHING */
+#coaching {
+  padding: 120px 48px;
+  background: var(--bg2);
+  position: relative;
+  overflow: hidden;
+}
+#coaching::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,165,90,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.coaching-intro {
+  max-width: 700px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+.coaching-intro p {
+  font-size: 16px;
+  color: rgba(240,237,232,0.6);
+  line-height: 1.8;
+}
+.coaching-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto 64px;
+}
+.coaching-card {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  padding: 36px 28px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.coaching-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+.coaching-card:hover { border-color: var(--border); transform: translateY(-4px); }
+.coaching-card:hover::after { transform: scaleX(1); }
+.card-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.card-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.card-desc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+.card-link:hover { gap: 12px; }
+
+.coaching-tools {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 48px;
+}
+.tools-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.tools-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 28px;
+  font-weight: 300;
+}
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+.tool-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  transition: border-color 0.2s;
+}
+.tool-item:hover { border-color: var(--border); }
+.tool-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+.tool-name {
+  font-size: 13px;
+  color: rgba(240,237,232,0.8);
+}
+
+/* SERVICIOS */
+#servicios {
+  padding: 120px 48px;
+}
+.servicios-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.servicio-card {
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 48px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.servicio-card.featured {
+  background: var(--bg3);
+  border-color: rgba(200,165,90,0.35);
+}
+.servicio-card:hover { transform: translateY(-4px); border-color: rgba(200,165,90,0.4); }
+.servicio-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 100px;
+  background: rgba(200,165,90,0.12);
+  border: 1px solid rgba(200,165,90,0.3);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.servicio-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.servicio-desc {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.servicio-list {
+  list-style: none;
+  margin-bottom: 32px;
+}
+.servicio-list li {
+  font-size: 13px;
+  color: rgba(240,237,232,0.7);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.servicio-list li::before {
+  content: '';
+  width: 16px; height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* TESTIMONIOS */
+#testimonios {
+  padding: 120px 48px;
+  background: var(--bg2);
+}
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.testimonio-card {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  padding: 32px;
+  transition: border-color 0.3s;
+}
+.testimonio-card:hover { border-color: var(--border); }
+.testimonio-stars {
+  display: flex; gap: 3px; margin-bottom: 16px;
+}
+.star { color: var(--gold); font-size: 14px; }
+.testimonio-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(240,237,232,0.8);
+  margin-bottom: 20px;
+}
+.testimonio-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.author-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--gold3);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  color: var(--bg);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.author-name { font-size: 13px; font-weight: 400; }
+.author-role { font-size: 11px; color: var(--muted); }
+
+/* CONTACTO */
+#contacto {
+  padding: 120px 48px;
+  position: relative;
+  overflow: hidden;
+}
+#contacto::before {
+  content: '';
+  position: absolute;
+  bottom: -200px; left: 50%;
+  transform: translateX(-50%);
+  width: 800px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(200,165,90,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.contacto-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.contacto-inner .section-label { justify-content: center; }
+.contacto-inner .section-label::before { display: none; }
+.contacto-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(240,237,232,0.6);
+  margin-bottom: 48px;
+}
+.contacto-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.contacto-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: block;
+}
+.contacto-card:hover { border-color: rgba(200,165,90,0.5); background: var(--bg3); }
+.contacto-card-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.contacto-card-value {
+  font-size: 15px;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.contacto-form {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  text-align: left;
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-field { margin-bottom: 16px; }
+.form-field.full { grid-column: 1 / -1; }
+.form-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.form-input, .form-textarea {
+  width: 100%;
+  background: var(--bg2);
+  border: 1px solid rgba(200,165,90,0.1);
+  border-radius: 10px;
+  padding: 13px 16px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus, .form-textarea:focus { border-color: rgba(200,165,90,0.4); }
+.form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
+.form-textarea { min-height: 120px; resize: vertical; }
+.form-submit {
+  width: 100%;
+  margin-top: 8px;
+  padding: 15px;
+  background: var(--gold);
+  color: var(--bg);
+  border: none;
+  border-radius: 100px;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.form-submit:hover { background: var(--gold2); transform: translateY(-2px); }
+
+/* FOOTER */
+footer {
+  padding: 48px;
+  border-top: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.footer-logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 20px;
+  color: var(--text);
+}
+.footer-logo span { color: var(--gold); }
+.footer-copy {
+  font-size: 12px;
+  color: var(--muted);
+}
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gold); }
+
+/* WHATSAPP FLOAT */
+.wa-float {
+  position: fixed;
+  bottom: 32px; right: 32px;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  z-index: 500;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+  transition: transform 0.2s;
+}
+.wa-float:hover { transform: scale(1.08); }
+.wa-float svg { width: 26px; height: 26px; fill: white; }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollLine {
+  0% { transform: scaleY(0); transform-origin: top; opacity: 1; }
+  50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* RESPONSIVE */
+/* ── TABLET ── */
+@media(max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr !important; }
+  .hero-inner > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  .hero-inner > div[style*="grid-template-columns"] > div:last-child { display:none !important; }
+  nav { padding: 18px 24px; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  #hero { padding: 100px 32px 60px; }
+  .sobre-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+  #sobre, #coaching, #servicios, #testimonios, #contacto { padding: 72px 32px; }
+  .coaching-tools { padding: 28px; }
+  .contacto-options { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  footer { padding: 32px 24px; flex-direction: column; text-align: center; }
+  .tools-header { flex-direction: column; align-items: flex-start; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .hero-roles { gap: 8px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .hero-actions a { text-align: center; }
+}
+
+/* ── MOBILE ── */
+@media(max-width: 600px) {
+  nav { padding: 14px 16px; }
+  .nav-logo { font-size: 18px; }
+  #hero { padding: 88px 20px 48px; min-height: auto; }
+  .hero-name { font-size: clamp(38px, 10vw, 56px); }
+  .hero-bio { font-size: 14px; }
+  .hero-roles { gap: 6px; }
+  .role-pill { font-size: 11px; padding: 4px 12px; }
+  .hero-actions { width: 100%; }
+  .hero-actions a, .hero-actions button { width: 100%; text-align: center; padding: 13px 24px; }
+  .btn-gold, .btn-outline { display: block; width: 100%; }
+  #sobre, #coaching, #servicios, #testimonios, #contacto { padding: 56px 20px; }
+  .section-title { font-size: clamp(28px, 8vw, 40px); }
+  .sobre-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat-box { padding: 20px 16px; }
+  .stat-num { font-size: 32px; }
+  .coaching-card { padding: 24px 20px; }
+  .coaching-tools { padding: 20px; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .servicio-card { padding: 32px 24px; }
+  .testimonios-grid { gap: 14px; }
+  .testimonio-card { padding: 24px 20px; }
+  .contacto-form { padding: 24px 20px; }
+  .contacto-options { grid-template-columns: 1fr; gap: 10px; }
+  footer { padding: 28px 20px; gap: 16px; }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+  .wa-float { bottom: 20px; right: 16px; width: 48px; height: 48px; }
+  .hero-scroll { display: none; }
+  .sobre-grid { gap: 24px; }
+  .sobre-text p { font-size: 14px; }
+  .card-desc { font-size: 12px; }
+  .servicio-list li { font-size: 12px; }
+  .form-submit { padding: 14px; font-size: 13px; }
+  /* Portal banner */
+  section[style*="padding:16px 48px"] { padding: 14px 16px !important; }
+  section[style*="padding:16px 48px"] > div { flex-direction: column; gap: 10px; }
+}
+
+/* ── SMALL MOBILE ── */
+@media(max-width: 380px) {
+  .hero-name { font-size: 34px; }
+  .role-pill { font-size: 10px; padding: 3px 10px; }
+  .sobre-stats { grid-template-columns: 1fr; }
+  nav { padding: 12px 14px; }
+}
+
+/* ── PROGRAM CARDS RESPONSIVE ── */
+
+
+@media(max-width:768px){
+  section[id]{padding:80px 24px!important;}
+  #hero{padding:100px 24px 60px!important;}
+}
+@media(max-width:600px){
+  section[id]{padding:60px 16px!important;}
+  #hero{padding:80px 16px 50px!important;}
+  .hero-actions{flex-direction:column!important;align-items:flex-start!important;}
+  .hero-actions a{width:100%;text-align:center;}
+  .stats-row{flex-direction:column!important;gap:20px!important;}
+  .section-title{font-size:clamp(28px,7vw,40px)!important;}
+}
+@media(max-width:380px){
+  section[id]{padding:48px 14px!important;}
+  .tools-grid{grid-template-columns:1fr!important;}
+  .navbar{padding:14px 16px!important;}
+}
+
+/* Animation safety fallback */
+@media (prefers-reduced-motion: reduce) {
+  .hero-label, .hero-name, .hero-roles, .hero-bio, .hero-actions, .hero-scroll { opacity: 1 !important; transform: none !important; }
+}
+
+.hero-label, .hero-name, .hero-roles, .hero-bio, .hero-actions, .hero-scroll {
+  animation-fill-mode: forwards !important;
+}
+
+/* Touch & performance improvements */
+*, *::before, *::after { -webkit-tap-highlight-color: transparent; }
+button, a { touch-action: manipulation; }
+img { max-width: 100%; height: auto; }
+/* Smooth scrolling on iOS */
+html { -webkit-overflow-scrolling: touch; }
+/* Prevent horizontal overflow */
+body { overflow-x: hidden; max-width: 100vw; }
+
+@media(max-width:900px){
+  #libro > div > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; gap:40px !important; }
+}
+@media(max-width:600px){
+  #libro { padding:56px 20px !important; }
+  #libro > div > div > div:first-child > div > div { width:220px !important; padding:36px 28px !important; }
+}
+
+/* Program cards - 3 columns desktop, 2 tablet, 1 mobile */
+@media(max-width:900px){
+  #coaching .prog-grid{grid-template-columns:repeat(2,1fr)!important;}
+}
+@media(max-width:640px){
+  #coaching .prog-grid{grid-template-columns:1fr!important;}
+}
+
+/* ── LANGUAGE SWITCHER ── */
+.lang-switcher{display:flex;align-items:center;gap:4px;margin-right:12px;}
+.lang-btn{padding:5px 10px;border:1px solid rgba(200,165,90,0.3);background:transparent;color:rgba(240,237,232,0.5);font-family:'Outfit',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.08em;border-radius:6px;cursor:pointer;transition:all 0.2s;}
+.lang-btn:hover{border-color:var(--gold);color:var(--gold);}
+.lang-btn.active{background:rgba(200,165,90,0.15);border-color:var(--gold);color:var(--gold);}
+@media(max-width:900px){.lang-switcher{order:-1;margin-right:0;margin-left:auto;}}
+
+
+/* ── MERCADOPAGO ── */
+.mp-btn{display:flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:100px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;text-decoration:none;transition:all 0.2s;letter-spacing:0.04em;color:#fff;}
+.mp-btn-gold{background:var(--gold);}
+.mp-btn-gold:hover{background:#E8C97A;}
+.mp-btn-blue{background:#5A9AC8;}
+.mp-btn-blue:hover{background:#7AB4D8;}
+.mp-btn-purple{background:#7C5AC8;}
+.mp-btn-purple:hover{background:#9B7DE8;}
+@media(max-width:900px){.mp-grid{grid-template-columns:1fr!important;max-width:460px;margin:0 auto;}}
+
+</style>
+<link rel="stylesheet" href="refinement.css">
+<meta name="theme-color" content="#111815">
+<meta property="og:title" content="Darian Roy Spalla · Coaching y desarrollo personal">
+<meta property="og:description" content="Un espacio para transformar tu manera de vivir, liderar y trabajar.">
+<meta property="og:type" content="website">
+</head>
+<body>
+<a class="skip-link" href="#coaching">Ir a los programas</a>
+
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Darian<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#sobre" data-i18n="nav_sobre">Sobre mí</a></li>
+    <li><a href="#coaching" data-i18n="nav_coaching">Programas</a></li>
+    <li><a href="#servicios" data-i18n="nav_servicios">Servicios</a></li>
+    <li><a href="#libro" data-i18n="nav_libro">Mi libro</a></li>
+    <li><a href="#test" data-i18n="nav_test">Test de liderazgo</a></li>
+    <li><a href="#inscribite" style="color:var(--gold);" data-i18n="nav_inscribite">Inscribite</a></li>
+    <li><a href="#contacto" data-i18n="nav_contacto">Contacto</a></li>
+    <li><a href="portal.html" style="color:var(--gold);">Portal equipo</a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('es')" id="lang-es">ES</button>
+    <button class="lang-btn" onclick="setLang('en')" id="lang-en">EN</button>
+    <button class="lang-btn" onclick="setLang('pt')" id="lang-pt">PT</button>
+  </div>
+  <a href="#contacto" class="nav-cta" data-i18n="nav_cta">Trabajemos juntos</a>
+  <button type="button" aria-label="Abrir menú" class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="#sobre" onclick="document.getElementById('mobileMenu').classList.remove('open')">Sobre mí</a>
+  <a href="#coaching" onclick="document.getElementById('mobileMenu').classList.remove('open')">Coaching</a>
+  <a href="#servicios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Servicios</a>
+  <a href="#libro" onclick="document.getElementById('mobileMenu').classList.remove('open')">Mi libro</a>
+  <a href="#test" onclick="document.getElementById('mobileMenu').classList.remove('open')">Test</a>
+  <a href="#contacto" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contacto</a>
+  <a href="portal.html" style="color:var(--gold);">Portal equipo</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-inner" style="display:grid; grid-template-columns:1fr auto; gap:60px; align-items:center;">
+<div class="hero-content">
+    <div class="hero-label">Coaching · Comunicación · Desarrollo humano</div>
+    <h1 class="hero-name">Darian Roy<br><em>Spalla</em></h1>
+    <div class="hero-roles">
+      <span class="role-pill" data-i18n-role="0">Filántropo</span>
+      <span class="role-pill" data-i18n-role="1">Locutor</span>
+      <span class="role-pill" data-i18n-role="2">Psicólogo Social</span>
+      <span class="role-pill" data-i18n-role="3">Coach Ontológico</span>
+      <span class="role-pill" data-i18n-role="4">Coach de Vida</span>
+      <span class="role-pill" data-i18n-role="5">Master en PNL</span>
+    </div>
+    <p class="hero-bio"><span data-i18n="hero_bio">Acompaño a personas y equipos en procesos de transformación real. Con más de una década de experiencia integrando psicología social, PNL y coaching ontológico, trabajo desde la raíz de los comportamientos para generar cambios que duran.</span></p>
+    <div class="hero-actions">
+      <a href="#coaching" class="btn-gold">Conocer el programa</a>
+      <a href="#sobre" class="btn-outline">Sobre mí</a>
+    </div>
+  </div>
+  <div style="animation:fadeUp 0.8s 0.8s forwards;flex-shrink:0;display:flex;align-items:center;">
+    <img fetchpriority="high" decoding="async" src="foto-hero.jpg" alt="Darian Roy Spalla" style="width:min(300px,100%);height:min(400px,50vw);object-fit:cover;object-position:center top;border-radius:160px 160px 80px 80px;border:1px solid rgba(200,165,90,0.3);">
+  </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="scroll-text">Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- PORTAL BANNER -->
+<section style="background:var(--gold); padding:16px 48px; text-align:center;">
+  <div style="display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap;">
+    <span style="font-family:Outfit,sans-serif; font-size:14px; color:var(--bg); font-weight:400;"><span data-i18n="portal_title">¿Sos parte del programa de coaching?</span></span>
+    <a href="portal.html" style="background:var(--bg); color:var(--gold); padding:8px 24px; border-radius:100px; font-size:12px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; white-space:nowrap;">Ingresar al portal →</a>
+  </div>
+</section>
+
+<!-- SOBRE MI -->
+<section id="sobre">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="reveal">
+      <div class="section-label"><span data-i18n="sobre_label">Quién soy</span></div>
+      <h2 class="section-title">Una vida dedicada<br>a la <em>transformación</em></h2>
+    </div>
+    <div class="sobre-grid">
+      <div class="sobre-foto reveal reveal-delay-1" style="display:flex; flex-direction:column; align-items:center; gap:20px;">
+        <img loading="lazy" src="foto-sobre.jpg" alt="Darian Roy Spalla" style="width:100%; max-width:380px; height:460px; object-fit:cover; object-position:center top; border-radius:24px; border:1px solid rgba(200,165,90,0.2);">
+        <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;">
+          <span style="padding:5px 14px; border:1px solid rgba(200,165,90,0.25); border-radius:100px; font-size:11px; letter-spacing:0.08em; color:var(--gold);">Psicólogo Social</span>
+          <span style="padding:5px 14px; border:1px solid rgba(200,165,90,0.25); border-radius:100px; font-size:11px; letter-spacing:0.08em; color:var(--gold);">Master PNL</span>
+          <span style="padding:5px 14px; border:1px solid rgba(200,165,90,0.25); border-radius:100px; font-size:11px; letter-spacing:0.08em; color:var(--gold);">Coach Ontológico</span>
+        </div>
+      </div>
+      <div class="sobre-text reveal reveal-delay-2">
+        <p><span data-i18n="sobre_p1">Soy Darian Roy Spalla, filántropo, locutor, psicólogo social, coach ontológico y de vida, y master en PNL. Mi camino profesional se construyó en la intersección entre la comunicación, la psicología y el desarrollo humano.</span></p>
+        <p>Creo profundamente que cada persona tiene dentro suyo los recursos necesarios para transformar su vida. Mi rol es ayudarte a encontrarlos, desbloquearlos y ponerlos en acción de manera concreta y sostenida.</p>
+        <p>Trabajo con individuos, líderes y equipos comerciales —especialmente en el sector inmobiliario— integrando herramientas de PNL, coaching ontológico y psicología social para generar resultados reales, medibles y duraderos.</p>
+      </div>
+      
+    </div>
+  </div>
+
+    <!-- Stats full width -->
+    <div class="sobre-stats reveal" style="margin-top:48px;">
+      <div class="stat-box"><div class="stat-num">+10</div><div class="stat-label">Años acompañando procesos de transformación</div></div>
+      <div class="stat-box"><div class="stat-num">PNL</div><div class="stat-label"><span data-i18n="stat3_lbl">Master Practitioner certificado</span></div></div>
+      <div class="stat-box"><div class="stat-num">360°</div><div class="stat-label"><span data-i18n="stat4_lbl">Enfoque integral: mente, emoción y acción</span></div></div>
+      <div class="stat-box"><div class="stat-num">∞</div><div class="stat-label">Compromiso con el crecimiento de cada persona</div></div>
+    </div>
+  </section>
+
+<!-- PROGRAMAS -->
+<section id="coaching" style="padding:100px 32px; background:var(--bg2);">
+  <div style="max-width:1200px; margin:0 auto;">
+
+    <div class="reveal" style="text-align:center; max-width:700px; margin:0 auto 64px;">
+      <div class="section-label" style="justify-content:center;"><span data-i18n="prog_label">Programas de coaching</span></div>
+      <h2 class="section-title" data-i18n-html="prog_title">Tres caminos.<br>Una <em>transformación real.</em></h2>
+      <p style="font-size:16px; color:rgba(240,237,232,0.6); line-height:1.8;">Elegí el camino que se conecta con tu momento: tu desarrollo profesional, tu vida personal o tu liderazgo desde la fe.</p>
+    </div>
+
+    <!-- Program cards -->
+    <div class="prog-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:64px; width:100%;">
+
+      <div class="reveal" style="background:var(--bg3); border:1px solid rgba(200,165,90,0.15); border-radius:20px; padding:36px; position:relative; overflow:hidden;">
+        <div style="position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(200,165,90,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:rgba(200,165,90,0.1);border:1px solid rgba(200,165,90,0.2);display:flex;align-items:center;justify-content:center;font-size:24px;">🏠</div>
+          <div>
+            <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;" data-i18n="prog1_num">Programa 1</div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:300;">Coaching <em style="font-style:italic;">Inmobiliario</em></div>
+          </div>
+        </div>
+        <p style="font-size:14px;color:rgba(240,237,232,0.65);line-height:1.85;margin-bottom:28px;">Para vendedores y equipos del sector inmobiliario del AMBA que quieren vender más, generar más confianza y desarrollar una mentalidad ganadora. 6 módulos completos con casos reales del mercado porteño.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px;">
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:var(--gold);font-size:16px;">✓</span> 6 módulos con teoría, ejercicios y exámenes
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:var(--gold);font-size:16px;">✓</span> Casos reales del mercado inmobiliario del AMBA
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:var(--gold);font-size:16px;">✓</span> Herramientas: scripts, banco de objeciones, plan 90 días
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:var(--gold);font-size:16px;">✓</span> Autodiagnóstico semanal y seguimiento con el coach
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:var(--gold);font-size:16px;">✓</span> Mensajería privada directa con Darian
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#contacto" style="padding:13px 28px;background:var(--gold);color:var(--bg);border-radius:100px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-decoration:none;text-transform:uppercase;transition:all 0.2s;" onmouseover="this.style.background='#E8C97A'" onmouseout="this.style.background='var(--gold)'">Consultar →</a>
+          <a href="portal.html" style="padding:13px 28px;background:transparent;color:rgba(240,237,232,0.7);border:1px solid rgba(240,237,232,0.2);border-radius:100px;font-family:'Outfit',sans-serif;font-size:13px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(240,237,232,0.2)';this.style.color='rgba(240,237,232,0.7)'">Acceder al portal</a>
+        </div></div>
+
+      <div class="reveal reveal-delay-1" style="background:var(--bg3); border:1px solid rgba(90,154,200,0.2); border-radius:20px; padding:36px; position:relative; overflow:hidden;">
+        <div style="position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(90,154,200,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:rgba(90,154,200,0.1);border:1px solid rgba(90,154,200,0.2);display:flex;align-items:center;justify-content:center;font-size:24px;">🌱</div>
+          <div>
+            <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#5A9AC8;margin-bottom:4px;" data-i18n="prog2_num">Programa 2</div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:300;">Coaching de <em style="font-style:italic;">Vida</em></div>
+          </div>
+        </div>
+        <p style="font-size:14px;color:rgba(240,237,232,0.65);line-height:1.85;margin-bottom:28px;">Para personas que quieren entenderse mejor, diseñar una vida con intención y romper los patrones que los frenan. 4 módulos profundos con herramientas de psicología práctica y cambio real.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px;">
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:#5A9AC8;font-size:16px;">✓</span> 4 módulos con ejercicios prácticos y exámenes
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:#5A9AC8;font-size:16px;">✓</span> Rueda de la vida, mapa de valores, visión a 10 años
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:#5A9AC8;font-size:16px;">✓</span> Técnicas de hábito ancla y cambio de identidad
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:#5A9AC8;font-size:16px;">✓</span> Sistema de revisión semanal personalizado
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:#5A9AC8;font-size:16px;">✓</span> Acompañamiento directo con Darian
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#contacto" style="padding:13px 28px;background:#5A9AC8;color:#fff;border-radius:100px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-decoration:none;text-transform:uppercase;transition:all 0.2s;" onmouseover="this.style.background='#7AB4D8'" onmouseout="this.style.background='#5A9AC8'">Consultar →</a>
+          <a href="portal.html" style="padding:13px 28px;background:transparent;color:rgba(240,237,232,0.7);border:1px solid rgba(240,237,232,0.2);border-radius:100px;font-family:'Outfit',sans-serif;font-size:13px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='#5A9AC8';this.style.color='#5A9AC8'" onmouseout="this.style.borderColor='rgba(240,237,232,0.2)';this.style.color='rgba(240,237,232,0.7)'">Acceder al portal</a>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2" style="background:var(--bg3); border:1px solid rgba(124,90,200,0.2); border-radius:20px; padding:36px; position:relative; overflow:hidden;">
+        <div style="position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(124,90,200,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:rgba(124,90,200,0.1);border:1px solid rgba(124,90,200,0.2);display:flex;align-items:center;justify-content:center;font-size:24px;">👑</div>
+          <div>
+            <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#7C5AC8;margin-bottom:4px;" data-i18n="prog3_num">Programa 3</div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:300;">Liderazgo <em style="font-style:italic;">Cristiano</em></div>
+          </div>
+        </div>
+        <p style="font-size:14px;color:rgba(240,237,232,0.65);line-height:1.85;margin-bottom:28px;">Para líderes que quieren articular su fe con su liderazgo. 7 módulos que integran coaching ontológico, psicología del cambio y la Escritura para producir cambios reales, profundos y duraderos.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px;">
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:#7C5AC8;font-size:16px;">✓</span> 7 módulos: identidad, carácter, visión, escucha, multiplicación, presión y legado
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:#7C5AC8;font-size:16px;">✓</span> Versículos articulados con coaching real — no como decoración sino como fundamento
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:#7C5AC8;font-size:16px;">✓</span> Modelos bíblicos: Moisés, Nehemías, Pablo, Jesús y David como casos reales
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:#7C5AC8;font-size:16px;">✓</span> Ejercicios prácticos con aplicación inmediata en familia, equipo o comunidad
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:rgba(240,237,232,0.75);">
+            <span style="color:#7C5AC8;font-size:16px;">✓</span> Formación de legado: liderazgo que trasciende más allá de vos
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#contacto" style="padding:13px 28px;background:#7C5AC8;color:#fff;border-radius:100px;font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-decoration:none;text-transform:uppercase;transition:all 0.2s;" onmouseover="this.style.background='#9B7DE8'" onmouseout="this.style.background='#7C5AC8'">Consultar →</a>
+          <a href="portal.html" style="padding:13px 28px;background:transparent;color:rgba(240,237,232,0.7);border:1px solid rgba(240,237,232,0.2);border-radius:100px;font-family:'Outfit',sans-serif;font-size:13px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='#7C5AC8';this.style.color='#7C5AC8'" onmouseout="this.style.borderColor='rgba(240,237,232,0.2)';this.style.color='rgba(240,237,232,0.7)'">Acceder al portal</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Shared tools -->
+    <div class="coaching-tools reveal">
+      <div class="tools-header">
+        <div class="tools-title" data-i18n="shared_title">Incluido en los tres programas</div>
+        <a href="portal.html" class="btn-gold" style="font-size:12px; padding:10px 24px;">Acceder al portal</a>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Autodiagnóstico semanal</span></div>
+        <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Portal privado de acceso</span></div>
+        <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Videos motivacionales</span></div>
+        <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Mensajes directos al coach</span></div>
+        <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Seguimiento de progreso</span></div>
+        <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Frases y contenido curado</span></div>
+        <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Exámenes por módulo</span></div>
+        <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Casos reales analizados</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="reveal">
+      <div class="section-label"><span data-i18n="serv_label">Lo que ofrezco</span></div>
+      <h2 class="section-title">Servicios <em>personalizados</em></h2>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio-card featured reveal reveal-delay-1">
+        <div class="servicio-badge"><span data-i18n="serv1_badge">Más solicitado</span></div>
+        <div class="servicio-title">Coaching Inmobiliario</div>
+        <div class="servicio-desc"><span data-i18n="serv1_desc">Programa completo para equipos de ventas inmobiliarias. Desde la mentalidad hasta el cierre, con herramientas concretas y seguimiento real.</span></div>
+        <ul class="servicio-list">
+          <li><span data-i18n="serv1_f1">Programa de 3 meses con 6 módulos</span></li>
+          <li><span data-i18n="serv1_f2">Taller intensivo de lanzamiento</span></li>
+          <li><span data-i18n="serv1_f3">Reuniones semanales de equipo</span></li>
+          <li><span data-i18n="serv1_f4">Acompañamiento en campo</span></li>
+          <li><span data-i18n="serv1_f5">Herramientas y recursos descargables</span></li>
+        </ul>
+        <a href="#contacto" class="btn-gold" style="font-size:13px; padding:12px 28px;"><span data-i18n="serv1_btn">Consultar programa</span></a>
+      </div>
+      <div class="servicio-card reveal reveal-delay-2">
+        <div class="servicio-badge">Individual</div>
+        <div class="servicio-title">Coaching Ontológico y de Vida</div>
+        <div class="servicio-desc">Acompañamiento personal para quienes buscan transformar su vida, superar bloqueos y alcanzar sus metas con una metodología probada.</div>
+        <ul class="servicio-list">
+          <li>Sesiones individuales 1 a 1</li>
+          <li>Trabajo con PNL y coaching ontológico</li>
+          <li>Enfoque en resultados concretos</li>
+          <li>Acompañamiento entre sesiones</li>
+          <li>Plan personalizado de acción</li>
+        </ul>
+        <a href="#contacto" class="btn-outline" style="font-size:13px; padding:12px 28px;"><span data-i18n="serv2_btn">Agendar sesión</span></a>
+      </div>
+      <div class="servicio-card reveal reveal-delay-1">
+        <div class="servicio-badge">Corporativo</div>
+        <div class="servicio-title">Talleres y Capacitaciones</div>
+        <div class="servicio-desc">Talleres grupales para empresas, organizaciones y equipos que buscan mejorar su comunicación, liderazgo y resultados.</div>
+        <ul class="servicio-list">
+          <li>Talleres de comunicación efectiva</li>
+          <li>Liderazgo y gestión de equipos</li>
+          <li>Manejo del estrés y resiliencia</li>
+          <li>Programas a medida</li>
+        </ul>
+        <a href="#contacto" class="btn-outline" style="font-size:13px; padding:12px 28px;">Solicitar propuesta</a>
+      </div>
+      <div class="servicio-card reveal reveal-delay-2">
+        <div class="servicio-badge">Comunicación</div>
+        <div class="servicio-title"><span data-i18n="contacto_opt4">Locución y Oratoria</span></div>
+        <div class="servicio-desc">Formación en comunicación verbal y no verbal para profesionales que necesitan hablar con impacto, claridad y presencia.</div>
+        <ul class="servicio-list">
+          <li>Técnica vocal y proyección</li>
+          <li>Presencia escénica</li>
+          <li>Comunicación persuasiva</li>
+          <li>Preparación para presentaciones</li>
+        </ul>
+        <a href="#contacto" class="btn-outline" style="font-size:13px; padding:12px 28px;">Consultar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIBRO -->
+<section id="libro" style="padding:120px 48px; background:var(--bg2); position:relative; overflow:hidden;">
+  <div style="position:absolute;top:-200px;left:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,165,90,0.06) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      
+      <!-- Portada del libro -->
+      <div style="display:flex;justify-content:center;align-items:center;">
+        <div style="position:relative;">
+          <img src="libro.jpg" alt="Lider con Proposito — Darian Roy Spalla" loading="lazy"
+            style="width:280px;border-radius:8px 20px 20px 8px;box-shadow:8px 8px 40px rgba(0,0,0,0.6),-2px 0 8px rgba(0,0,0,0.3);border:1px solid rgba(200,165,90,0.2);display:block;">
+        </div>
+      </div>
+
+      <!-- Info del libro -->
+      <div>
+        <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px;">
+          <span style="width:24px;height:1px;background:var(--gold);display:inline-block;"></span>
+          Mi libro
+        </div>
+        <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,5vw,52px);font-weight:300;line-height:1.15;margin-bottom:20px;">
+          Lider con <em style="font-style:italic;color:var(--gold);">Proposito</em>
+        </h2>
+        <p style="font-size:15px;line-height:1.9;color:rgba(240,237,232,0.7);margin-bottom:16px;">
+          Un libro que nace de años de experiencia acompañando procesos de transformación real. Desde las raíces del liderazgo interior hasta las herramientas concretas para ejercerlo en tu vida personal y profesional.
+        </p>
+        <p style="font-size:15px;line-height:1.9;color:rgba(240,237,232,0.7);margin-bottom:32px;">
+          Disponible en formato Kindle en Amazon. Una lectura para quienes están listos para liderar desde adentro hacia afuera.
+        </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:32px;">
+          <span style="padding:5px 16px;border:1px solid var(--border);border-radius:100px;font-size:12px;color:var(--muted);">📚 eBook Kindle</span>
+          <span style="padding:5px 16px;border:1px solid var(--border);border-radius:100px;font-size:12px;color:var(--muted);">🌎 Español</span>
+          <span style="padding:5px 16px;border:1px solid var(--border);border-radius:100px;font-size:12px;color:var(--muted);">⭐ Amazon</span>
+        </div>
+        <a href="https://www.amazon.com/L%C3%ADder-Proposito-Superaci%C3%B3n-Liderazgo-Interior-ebook/dp/B0F662LHH6" target="_blank" rel="noopener noreferrer" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:15px 36px;background:var(--gold);color:var(--bg);border-radius:100px;font-family:'Outfit',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='#E8C97A'" onmouseout="this.style.background='#C8A55A'">
+          Conseguir en Amazon →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEST DE LIDERAZGO -->
+<section id="test" style="padding:120px 48px; background:var(--bg2); position:relative; overflow:hidden;">
+  <div style="position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(200,165,90,0.06) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="max-width:800px;margin:0 auto;">
+
+    <!-- Intro -->
+    <div id="test-intro" style="text-align:center;">
+      <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:12px;"><span style="width:24px;height:1px;background:var(--gold);display:inline-block;"></span>Interactivo<span style="width:24px;height:1px;background:var(--gold);display:inline-block;"></span></div>
+      <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,5vw,52px);font-weight:300;line-height:1.2;margin-bottom:16px;">¿Qué tipo de <em style="font-style:italic;color:var(--gold);">líder</em> sos?</h2>
+      <p style="font-size:15px;color:rgba(240,237,232,0.65);line-height:1.8;margin-bottom:36px;max-width:560px;margin-left:auto;margin-right:auto;">10 preguntas. 3 minutos. Descubrí tu perfil de liderazgo y qué herramientas necesitás para desarrollarlo.</p>
+      <button onclick="startTest()" style="display:inline-block;padding:15px 48px;background:var(--gold);color:var(--bg);border:none;border-radius:100px;font-family:'Outfit',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='#E8C97A'" onmouseout="this.style.background='#C8A55A'"><span data-i18n="test_btn">Empezar el test →</span></button>
+      <div style="display:flex;gap:32px;justify-content:center;margin-top:32px;flex-wrap:wrap;">
+        <div style="text-align:center;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;color:var(--gold);">10</div><div style="font-size:11px;color:var(--muted);letter-spacing:0.06em;">preguntas</div></div>
+        <div style="text-align:center;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;color:var(--gold);">4</div><div style="font-size:11px;color:var(--muted);letter-spacing:0.06em;">perfiles</div></div>
+        <div style="text-align:center;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;color:var(--gold);">3'</div><div style="font-size:11px;color:var(--muted);letter-spacing:0.06em;">minutos</div></div>
+      </div>
+    </div>
+
+    <!-- Preguntas -->
+    <div id="test-questions" style="display:none;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+        <span id="test-q-num" style="font-size:12px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;">Pregunta 1 de 10</span>
+        <span id="test-q-pct" style="font-size:12px;color:var(--gold);">0%</span>
+      </div>
+      <div style="height:4px;background:rgba(200,165,90,0.15);border-radius:4px;margin-bottom:36px;overflow:hidden;">
+        <div id="test-progress-bar" style="height:100%;width:0%;background:var(--gold);border-radius:4px;transition:width 0.4s;"></div>
+      </div>
+      <div id="test-q-text" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(20px,3vw,28px);font-weight:300;line-height:1.4;margin-bottom:28px;min-height:80px;"></div>
+      <div id="test-opts" style="display:flex;flex-direction:column;gap:12px;"></div>
+    </div>
+
+    <!-- Resultado -->
+    <div id="test-result" style="display:none;text-align:center;">
+      <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;"><span data-i18n="test_result_title">Tu perfil</span></div>
+      <div id="result-icon" style="font-size:56px;margin-bottom:16px;"></div>
+      <h3 id="result-title" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(28px,4vw,40px);font-weight:300;margin-bottom:12px;"></h3>
+      <div id="result-subtitle" style="font-size:13px;color:var(--gold);letter-spacing:0.08em;margin-bottom:20px;"></div>
+      <p id="result-desc" style="font-size:15px;color:rgba(240,237,232,0.7);line-height:1.9;margin-bottom:28px;max-width:580px;margin-left:auto;margin-right:auto;"></p>
+      <div id="result-traits" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:32px;"></div>
+      <div id="result-rec" style="background:rgba(200,165,90,0.06);border:1px solid rgba(200,165,90,0.2);border-radius:16px;padding:24px;text-align:left;margin-bottom:32px;">
+        <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;"><span data-i18n="test_result_rec">Lo que te recomiendo</span></div>
+        <p id="result-rec-text" style="font-size:14px;color:rgba(240,237,232,0.8);line-height:1.8;"></p>
+      </div>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="#contacto" style="padding:14px 36px;background:var(--gold);color:var(--bg);border-radius:100px;font-family:'Outfit',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;"><span data-i18n="test_cta">Hablar con Darian →</span></a>
+        <button onclick="resetTest()" style="padding:14px 36px;background:transparent;color:rgba(240,237,232,0.6);border:1px solid rgba(240,237,232,0.2);border-radius:100px;font-family:'Outfit',system-ui,sans-serif;font-size:13px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(240,237,232,0.2)';this.style.color='rgba(240,237,232,0.6)'"><span data-i18n="test_retry">Repetir el test</span></button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- MERCADOPAGO -->
+<section id="inscribite" style="padding:100px 32px; background:var(--bg);">
+  <div style="max-width:1000px; margin:0 auto;">
+    <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 56px;">
+      <div class="section-label" style="justify-content:center;"><span data-i18n="mp_title">Inscribite ahora</span></div>
+      <h2 class="section-title" style="font-size:clamp(32px,5vw,48px);">Elegí tu programa y <em>empezá hoy</em></h2>
+      <p style="font-size:15px;color:rgba(240,237,232,0.6);line-height:1.8;" data-i18n="mp_desc">Elegí tu programa y comenzá tu transformación hoy.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;width:100%;" class="mp-grid">
+
+      <!-- Coaching Inmobiliario -->
+      <div class="reveal" style="background:var(--bg3);border:1px solid rgba(200,165,90,0.2);border-radius:20px;padding:32px;text-align:center;display:flex;flex-direction:column;gap:16px;">
+        <div style="font-size:32px;">🏠</div>
+        <div>
+          <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;" data-i18n="prog1_num">Programa 1</div>
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;" data-i18n-html="prog1_name">Coaching <em>Inmobiliario</em></div>
+        </div>
+        <div style="font-size:13px;color:rgba(240,237,232,0.5);line-height:1.6;" data-i18n="prog1_desc_short" id="mp-desc-prog1">6 módulos · Casos reales · Herramientas prácticas</div>
+        <div id="mp-price-prog1" style="display:none;margin-top:12px;text-align:center;"><div style="font-size:28px;font-weight:500;color:var(--gold);letter-spacing:-0.02em;" id="mp-price-val-prog1"></div><div style="font-size:11px;color:var(--muted);margin-top:2px;" id="mp-price-desc-prog1"></div></div>
+        <div style="margin-top:auto;">
+          <!-- MP Button Prog 1 - replace href with your MP link -->
+          <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=REPLACE_PROG1" id="mp-btn-prog1" 
+             target="_blank" rel="noopener noreferrer" rel="noopener"
+             class="mp-btn mp-btn-gold"
+             onclick="trackMP('prog1')">
+            <img src="mercadopago.png" alt="MP" style="height:16px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);">
+            <span data-i18n="mp_btn">Pagar con MercadoPago</span>
+          </a>
+          <a href="#contacto" style="display:block;margin-top:10px;font-size:12px;color:var(--muted);text-decoration:none;" data-i18n="contacto_wa"><span data-i18n="mp_doubt">¿Dudas? Consultá por WhatsApp</span></a>
+        </div>
+      </div>
+
+      <!-- Coaching de Vida -->
+      <div class="reveal reveal-delay-1" style="background:var(--bg3);border:1px solid rgba(90,154,200,0.2);border-radius:20px;padding:32px;text-align:center;display:flex;flex-direction:column;gap:16px;">
+        <div style="font-size:32px;">🌱</div>
+        <div>
+          <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#5A9AC8;margin-bottom:6px;" data-i18n="prog2_num">Programa 2</div>
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;" data-i18n-html="prog2_name">Coaching de <em>Vida</em></div>
+        </div>
+        <div style="font-size:13px;color:rgba(240,237,232,0.5);line-height:1.6;" data-i18n="prog2_desc_short" id="mp-desc-prog2">4 módulos · Psicología práctica · Cambio real</div>
+        <div id="mp-price-prog2" style="display:none;margin-top:12px;text-align:center;"><div style="font-size:28px;font-weight:500;color:#5A9AC8;letter-spacing:-0.02em;" id="mp-price-val-prog2"></div><div style="font-size:11px;color:var(--muted);margin-top:2px;" id="mp-price-desc-prog2"></div></div>
+        <div style="margin-top:auto;">
+          <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=REPLACE_PROG2" id="mp-btn-prog2"
+             target="_blank" rel="noopener noreferrer" rel="noopener"
+             class="mp-btn mp-btn-blue"
+             onclick="trackMP('prog2')">
+            <img src="mercadopago.png" alt="MP" style="height:16px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);">
+            <span data-i18n="mp_btn">Pagar con MercadoPago</span>
+          </a>
+          <a href="#contacto" style="display:block;margin-top:10px;font-size:12px;color:var(--muted);text-decoration:none;" data-i18n="contacto_wa"><span data-i18n="mp_doubt">¿Dudas? Consultá por WhatsApp</span></a>
+        </div>
+      </div>
+
+      <!-- Liderazgo Cristiano -->
+      <div class="reveal reveal-delay-2" style="background:var(--bg3);border:1px solid rgba(124,90,200,0.2);border-radius:20px;padding:32px;text-align:center;display:flex;flex-direction:column;gap:16px;">
+        <div style="font-size:32px;">👑</div>
+        <div>
+          <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#7C5AC8;margin-bottom:6px;" data-i18n="prog3_num">Programa 3</div>
+          <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;" data-i18n-html="prog3_name">Liderazgo <em>Cristiano</em></div>
+        </div>
+        <div style="font-size:13px;color:rgba(240,237,232,0.5);line-height:1.6;" data-i18n="prog3_desc_short" id="mp-desc-prog3">7 módulos · Fe y coaching · Liderazgo con propósito</div>
+        <div id="mp-price-prog3" style="display:none;margin-top:12px;text-align:center;"><div style="font-size:28px;font-weight:500;color:#7C5AC8;letter-spacing:-0.02em;" id="mp-price-val-prog3"></div><div style="font-size:11px;color:var(--muted);margin-top:2px;" id="mp-price-desc-prog3"></div></div>
+        <div style="margin-top:auto;">
+          <a href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=REPLACE_PROG3" id="mp-btn-prog3"
+             target="_blank" rel="noopener noreferrer" rel="noopener"
+             class="mp-btn mp-btn-purple"
+             onclick="trackMP('prog3')">
+            <img src="mercadopago.png" alt="MP" style="height:16px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);">
+            <span data-i18n="mp_btn">Pagar con MercadoPago</span>
+          </a>
+          <a href="#contacto" style="display:block;margin-top:10px;font-size:12px;color:var(--muted);text-decoration:none;" data-i18n="contacto_wa"><span data-i18n="mp_doubt">¿Dudas? Consultá por WhatsApp</span></a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="reveal" style="text-align:center;margin-top:32px;font-size:12px;color:rgba(240,237,232,0.3);line-height:1.8;">
+      <span data-i18n="mp_footer">Pagos seguros procesados por MercadoPago · Acepta tarjetas de débito y crédito, transferencia y efectivo en todo el mundo</span><br>
+      ¿Preferís pagar por otro medio? <a href="#contacto" style="color:var(--gold);"><span data-i18n="mp_alt_link">Escribinos</span></a>
+    </p>
+  </div>
+</section>
+
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 64px;">
+      <div class="section-label" style="justify-content:center;" data-i18n="test_label">Testimonios</div>
+      <h2 class="section-title" data-i18n-html="test_title">Lo que dicen quienes<br><em>ya trabajaron</em> conmigo</h2>
+    </div>
+    <div class="testimonios-grid" id="testimonios-grid">
+      <!-- Static testimonials -->
+      <div class="testimonio-card reveal reveal-delay-1">
+        <div class="testimonio-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="testimonio-text" data-i18n="testimonial1_text">"El proceso con Darian me cambió la forma de ver las ventas. Dejé de tener miedo al rechazo y empecé a cerrar con mucha más confianza."</div>
+        <div class="testimonio-author">
+          <div class="author-avatar">MG</div>
+          <div><div class="author-name" data-i18n="test1_name">María G.</div><div class="author-role" data-i18n="test1_role">Vendedora inmobiliaria</div></div>
+        </div>
+      </div>
+      <div class="testimonio-card reveal reveal-delay-2">
+        <div class="testimonio-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="testimonio-text" data-i18n="testimonial2_text">"Nuestro equipo creció un 40% en resultados en el primer trimestre del programa. Las herramientas que nos da Darian son prácticas y concretas."</div>
+        <div class="testimonio-author">
+          <div class="author-avatar">JR</div>
+          <div><div class="author-name" data-i18n="test2_name">Javier R.</div><div class="author-role" data-i18n="test2_role">Gerente comercial</div></div>
+        </div>
+      </div>
+      <div class="testimonio-card reveal reveal-delay-3">
+        <div class="testimonio-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <div class="testimonio-text" data-i18n="testimonial3_text">"El coaching de vida con Darian me ayudó a salir de un momento muy difícil. Su enfoque es profundo, humano y siempre orientado a la acción."</div>
+        <div class="testimonio-author">
+          <div class="author-avatar">AL</div>
+          <div><div class="author-name" data-i18n="test3_name">Ana L.</div><div class="author-role" data-i18n="test3_role">Empresaria</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- Dynamic testimonials from portal will be injected here -->
+    <div id="dynamic-testimonios" style="margin-top:24px;"></div>
+  </div>
+</section>
+
+<script>
+// Load approved testimonials from portal localStorage
+(function(){
+  try {
+    var db = JSON.parse(localStorage.getItem('coaching_portal') || '{}');
+    var reflexiones = db.reflexiones || [];
+    var approved = reflexiones.filter(function(r){ return r.approved && r.public; });
+    if (!approved.length) return;
+    var grid = document.getElementById('dynamic-testimonios');
+    var inner = '<div class="testimonios-grid">';
+    approved.forEach(function(r){
+      var ini = r.name ? r.name.split(' ').map(function(w){return w[0]||'';}).join('').slice(0,2).toUpperCase() : '??';
+      var stars = '<span class="star">★</span>'.repeat(r.stars || 5);
+      inner += '<div class="testimonio-card">'
+        + '<div class="testimonio-stars">' + stars + '</div>'
+        + '<div class="testimonio-text">"' + r.text + '"</div>'
+        + '<div class="testimonio-author">'
+        + '<div class="author-avatar">' + ini + '</div>'
+        + '<div><div class="author-name">' + (r.publicName || r.name) + '</div>'
+        + '<div class="author-role">' + (r.programa || 'Participante') + '</div></div>'
+        + '</div></div>';
+    });
+    inner += '</div>';
+    grid.innerHTML = inner;
+  } catch(e) {}
+})();
+</script>
+
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contacto-inner">
+    <div class="reveal">
+      <div class="section-label">Contacto</div>
+      <h2 class="section-title" data-i18n-html="contacto_title">Hablemos y <em>empecemos</em></h2>
+      <p class="contacto-desc"><span data-i18n="contacto_desc">Si querés saber más sobre el programa de coaching, agendar una sesión o simplemente hacer una consulta, escribime. Respondo personalmente.</span></p>
+    </div>
+    <div class="contacto-options reveal">
+      <a href="/<a href="javascript:void(0)" onclick="window.location='mai'+'lto:'+'contacto'+'@'+'darianspalla.com'" class="contacto-card">
+        <div class="contacto-card-label">Email</div>
+        <div class="contacto-card-value">contacto&#64;darianspalla&#46;com</div>
+      </a>
+      <a href="https://wa.me/5491122676200" class="contacto-card" target="_blank" rel="noopener noreferrer">
+        <div class="contacto-card-label">WhatsApp</div>
+        <div class="contacto-card-value"><span data-i18n="contacto_wa_sub">Escribime directo</span></div>
+      </a>
+    </div>
+    <div class="contacto-form reveal">
+      <div class="form-grid">
+        <div class="form-field">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-input" placeholder="Tu nombre" data-i18n-ph="contacto_form_name">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="tu@email.com">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Teléfono / WhatsApp</label>
+          <input type="tel" class="form-input" placeholder="+54 9 ...">
+        </div>
+        <div class="form-field">
+          <label class="form-label"><span data-i18n="contacto_form_interest">Me interesa</span></label>
+          <select class="form-input">
+            <option value=""><span data-i18n="contacto_opt0">Seleccioná una opción</span></option>
+            <option>Coaching Inmobiliario</option>
+            <option><span data-i18n="contacto_opt2">Coaching Ontológico / de Vida</span></option>
+            <option><span data-i18n="contacto_opt3">Taller o Capacitación</span></option>
+            <option><span data-i18n="contacto_opt4">Locución y Oratoria</span></option>
+            <option><span data-i18n="contacto_opt5">Consulta general</span></option>
+          </select>
+        </div>
+        <div class="form-field full">
+          <label class="form-label">Mensaje</label>
+          <textarea class="form-textarea" placeholder="Contame un poco sobre lo que buscás..."></textarea>
+        </div>
+      </div>
+      <button class="form-submit" onclick="handleSubmit(this)" data-i18n="contacto_form_btn">Continuar por WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<section style="padding:80px 48px; background:var(--bg2); text-align:center;">
+  <div style="max-width:680px; margin:0 auto;">
+    <div style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;">Para el equipo comercial</div>
+    <h2 style="font-family:Cormorant Garamond,serif; font-size:clamp(32px,5vw,48px); font-weight:300; line-height:1.2; margin-bottom:16px;">Portal de <em style="font-style:italic; color:var(--gold);">coaching</em></h2>
+    <p style="font-size:15px; color:rgba(240,237,232,0.6); line-height:1.8; margin-bottom:36px;">Si sos parte del programa, ingresá al portal para completar tu autodiagnóstico semanal, ver tu evolución y acceder a todos los materiales.</p>
+    <a href="portal.html" style="display:inline-block; padding:16px 48px; background:var(--gold); color:var(--bg); border-radius:100px; font-family:Outfit,sans-serif; font-size:13px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; transition:all 0.2s;">Ingresar al portal →</a>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">Darian<span>.</span></div>
+  <div class="footer-copy">© 2026 Darian Roy Spalla · darianspalla.com</div>
+  <div class="footer-links">
+    <a href="#sobre">Sobre mí</a>
+    <a href="#coaching">Coaching</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/5491122676200" class="wa-float" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+
+  window.addEventListener('scroll', function() {
+    var nav = document.getElementById('navbar');
+    nav.style.padding = window.scrollY > 60 ? '14px 48px' : '20px 48px';
+  });
+
+  function handleSubmit(btn) {
+    var original = btn.textContent;
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+    setTimeout(function() {
+      btn.textContent = 'Mensaje enviado ✓';
+      btn.style.background = '#4A7C59';
+      setTimeout(function() {
+        btn.textContent = original;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3000);
+    }, 1200);
+  }
+
+  // Safety: ensure hero content is always visible
+  window.addEventListener('load', function() {
+    document.querySelectorAll('.hero-label,.hero-name,.hero-roles,.hero-bio,.hero-actions,.hero-scroll,.reveal').forEach(function(el) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+  });
+</script>
+
+<script>
+var TEST_QUESTIONS=[
+  {q:'Cuando tu equipo enfrenta un problema difícil, ¿qué hacés primero?',opts:[{t:'Tomo la decisión yo y les digo qué hacer',v:'D'},{t:'Los reúno y escucho todas las perspectivas antes de decidir',v:'A'},{t:'Les doy autonomía para que lo resuelvan y estoy disponible si necesitan',v:'V'},{t:'Analizo los datos y busco la solución más eficiente',v:'E'}]},
+  {q:'¿Qué es lo que más valoran las personas con las que trabajás de vos?',opts:[{t:'Que siempre tenés una respuesta y sabés a dónde ir',v:'D'},{t:'Que los escuchás y creás un ambiente de confianza',v:'A'},{t:'Que los dejás crecer y confías en su criterio',v:'V'},{t:'Que sos metódico y siempre encontrás la mejor forma de hacer las cosas',v:'E'}]},
+  {q:'Cuando algo no sale como esperabas en el trabajo, ¿cuál es tu reacción inmediata?',opts:[{t:'Identifico el problema rápido y corrijo el rumbo con decisión',v:'D'},{t:'Hablo con el equipo para entender qué pasó y cómo se sienten',v:'A'},{t:'Dejo espacio para que cada uno aprenda del proceso a su ritmo',v:'V'},{t:'Analizo qué falló en el proceso y busco cómo mejorarlo sistemáticamente',v:'E'}]},
+  {q:'¿Qué tipo de metas te motivan más?',opts:[{t:'Metas ambiciosas y desafiantes que exigen lo mejor de todos',v:'D'},{t:'Metas que tienen un impacto positivo en las personas de mi entorno',v:'A'},{t:'Metas que me dan libertad para explorar y crear',v:'V'},{t:'Metas claras, medibles y alcanzables con un plan sólido',v:'E'}]},
+  {q:'¿Cómo preferís comunicarte con tu equipo?',opts:[{t:'Directo y claro: qué hay que hacer y para cuándo',v:'D'},{t:'Con conversaciones abiertas donde todos pueden expresarse',v:'A'},{t:'Dando contexto y dejando que cada uno defina su camino',v:'V'},{t:'Con información precisa y estructurada para que todos sepan exactamente qué se espera',v:'E'}]},
+  {q:'¿Qué describís como un buen resultado de una reunión de trabajo?',opts:[{t:'Se tomaron decisiones concretas y hay responsables definidos',v:'D'},{t:'Todos salieron alineados y con ganas de trabajar juntos',v:'A'},{t:'Se abrieron ideas nuevas y el equipo quedó energizado',v:'V'},{t:'Quedó documentado el plan con pasos, fechas y métricas',v:'E'}]},
+  {q:'Cuando alguien de tu equipo comete un error, ¿cómo lo manejás?',opts:[{t:'Lo confronto directamente y establezco que no puede volver a pasar',v:'D'},{t:'Hablo con esa persona en privado y entiendo qué pasó con empatía',v:'A'},{t:'Confío en que va a aprender por sí mismo y le doy espacio',v:'V'},{t:'Reviso el proceso con esa persona para entender dónde falló el sistema',v:'E'}]},
+  {q:'¿En qué situación te sentís más en tu elemento como líder?',opts:[{t:'Tomando decisiones rápidas bajo presión',v:'D'},{t:'Acompañando el desarrollo de las personas de mi equipo',v:'A'},{t:'Generando ideas innovadoras y explorando nuevos caminos',v:'V'},{t:'Diseñando sistemas y procesos que mejoran los resultados',v:'E'}]},
+  {q:'¿Cómo reaccionás cuando alguien no está de acuerdo con vos?',opts:[{t:'Defiendo mi posición si estoy convencido y busco que entiendan mi punto',v:'D'},{t:'Escucho con genuina apertura — quizás tienen razón',v:'A'},{t:'Me interesa la perspectiva diferente, es donde suelen estar las mejores ideas',v:'V'},{t:'Analizo los argumentos objetivamente y cambio de opinión si los datos lo justifican',v:'E'}]},
+  {q:'¿Cuál de estas frases te describe mejor?',opts:[{t:'"Primero actuar, después ajustar"',v:'D'},{t:'"Las personas son lo más importante de cualquier equipo"',v:'A'},{t:'"Las mejores soluciones todavía no fueron inventadas"',v:'V'},{t:'"Si no podés medirlo, no podés mejorarlo"',v:'E'}]}
+];
+var TEST_PROFILES={
+  D:{icon:'🦁',title:'El Líder Decidido',subtitle:'DIRECTO · RESOLUTIVO · ORIENTADO A RESULTADOS',desc:'Tenés una capacidad natural para tomar decisiones rápidas y conducir al equipo hacia los resultados con claridad y determinación. Tu fortaleza está en la acción: donde otros dudan, vos actuás. Generás confianza porque las personas saben que siempre vas a dar una dirección clara.',traits:['Toma decisiones rápido','Alta orientación a resultados','Presencia fuerte','Ejecutor nato'],rec:'Tu desafío es desarrollar la escucha activa y la paciencia con procesos más lentos. El coaching ontológico puede ayudarte a ampliar tu rango de respuesta: liderar no solo desde la acción, sino también desde la presencia y la pregunta.'},
+  A:{icon:'🌊',title:'El Líder Empático',subtitle:'HUMANO · CONECTADO · INSPIRADOR',desc:'Tu mayor fortaleza es tu capacidad de conectar con las personas y crear ambientes de confianza donde los equipos dan lo mejor. Sos el líder al que la gente quiere seguir, no por su autoridad sino por cómo hace sentir a los demás. Tenés una inteligencia emocional muy desarrollada.',traits:['Inteligencia emocional alta','Construye confianza','Escucha activa','Crea cohesión'],rec:'Tu área de crecimiento es fortalecer la capacidad de confrontar y tomar decisiones difíciles cuando la situación lo requiere. La PNL y el coaching ontológico pueden darte herramientas para liderar desde la empatía sin perder la firmeza cuando hace falta.'},
+  V:{icon:'🦋',title:'El Líder Visionario',subtitle:'CREATIVO · INNOVADOR · TRANSFORMADOR',desc:'Pensás diferente. Donde otros ven obstáculos, vos ves oportunidades. Tu capacidad para imaginar futuros posibles e inspirar a otros con esa visión es tu superpoder. Sos el líder que lleva a los equipos a lugares donde nunca pensaron llegar.',traits:['Pensamiento disruptivo','Genera inspiración','Tolerante al riesgo','Orientado al futuro'],rec:'Tu desafío está en la ejecución y la consistencia. Las grandes ideas necesitan sistemas y procesos para materializarse. El coaching ejecutivo puede ayudarte a construir el puente entre tu visión y los resultados concretos.'},
+  E:{icon:'⚙️',title:'El Líder Estratégico',subtitle:'ANALÍTICO · SISTEMÁTICO · PRECISO',desc:'Tu fortaleza es la capacidad de ver el panorama completo y diseñar el camino más eficiente para llegar ahí. Sos el líder que construye sistemas que funcionan, que mide lo que importa y que toma decisiones basadas en datos. Tu equipo confía en tu criterio porque siempre está bien fundamentado.',traits:['Pensamiento sistémico','Orientado a datos','Planificación sólida','Mejora continua'],rec:'Tu área de desarrollo es la dimensión humana del liderazgo: las emociones, la motivación y la conexión personal con el equipo. Un líder estratégico que también domina la inteligencia emocional es prácticamente imparable.'}
+};
+var testAnswers={D:0,A:0,V:0,E:0},testCurrent=0;
+function startTest(){testAnswers={D:0,A:0,V:0,E:0};testCurrent=0;document.getElementById('test-intro').style.display='none';document.getElementById('test-result').style.display='none';document.getElementById('test-questions').style.display='block';renderQuestion();}
+function renderQuestion(){var q=TEST_QUESTIONS[testCurrent];document.getElementById('test-q-num').textContent='Pregunta '+(testCurrent+1)+' de '+TEST_QUESTIONS.length;var pct=Math.round(testCurrent/TEST_QUESTIONS.length*100);document.getElementById('test-q-pct').textContent=pct+'%';document.getElementById('test-progress-bar').style.width=pct+'%';document.getElementById('test-q-text').textContent=q.q;var optsEl=document.getElementById('test-opts');optsEl.innerHTML='';q.opts.forEach(function(opt){var btn=document.createElement('button');btn.style.cssText='display:block;width:100%;padding:16px 20px;background:rgba(200,165,90,0.04);border:1px solid rgba(200,165,90,0.15);border-radius:12px;font-family:Outfit,system-ui,sans-serif;font-size:14px;font-weight:300;color:rgba(240,237,232,0.85);text-align:left;cursor:pointer;transition:all 0.2s;line-height:1.6;margin-bottom:0;';btn.textContent=opt.t;btn.onmouseover=function(){this.style.background='rgba(200,165,90,0.1)';this.style.borderColor='rgba(200,165,90,0.4)';};btn.onmouseout=function(){this.style.background='rgba(200,165,90,0.04)';this.style.borderColor='rgba(200,165,90,0.15)';};btn.addEventListener('click',(function(v){return function(){selectAnswer(v);};})(opt.v));optsEl.appendChild(btn);});}
+function selectAnswer(v){testAnswers[v]++;testCurrent++;document.getElementById('test-questions').style.opacity='0';setTimeout(function(){if(testCurrent<TEST_QUESTIONS.length){renderQuestion();document.getElementById('test-questions').style.transition='opacity 0.3s';document.getElementById('test-questions').style.opacity='1';}else{showResult();}},300);}
+function showResult(){document.getElementById('test-progress-bar').style.width='100%';document.getElementById('test-q-pct').textContent='100%';setTimeout(function(){document.getElementById('test-questions').style.display='none';var winner='D',max=0;Object.keys(testAnswers).forEach(function(k){if(testAnswers[k]>max){max=testAnswers[k];winner=k;}});var profile=TEST_PROFILES[winner];document.getElementById('result-icon').textContent=profile.icon;document.getElementById('result-title').textContent=profile.title;document.getElementById('result-subtitle').textContent=profile.subtitle;document.getElementById('result-desc').textContent=profile.desc;document.getElementById('result-rec-text').textContent=profile.rec;var traitsEl=document.getElementById('result-traits');traitsEl.innerHTML='';profile.traits.forEach(function(t){var span=document.createElement('span');span.style.cssText='padding:6px 18px;border:1px solid rgba(200,165,90,0.3);border-radius:100px;font-size:12px;color:var(--gold);background:rgba(200,165,90,0.06);';span.textContent=t;traitsEl.appendChild(span);});document.getElementById('test-result').style.display='block';document.getElementById('test-result').scrollIntoView({behavior:'smooth',block:'start'});},400);}
+function resetTest(){document.getElementById('test-result').style.display='none';document.getElementById('test-intro').style.display='block';document.getElementById('test-intro').scrollIntoView({behavior:'smooth',block:'center'});}
+
+// ── INTERNACIONALIZACIÓN (ES / EN / PT) ──
+var TRANSLATIONS = {"es": {"nav_sobre": "Sobre mí", "nav_coaching": "Programas", "nav_servicios": "Servicios", "nav_libro": "Mi libro", "nav_test": "Test", "nav_inscribite": "Inscribite", "nav_contacto": "Contacto", "nav_portal": "Portal", "nav_cta": "Trabajemos juntos", "hero_roles": "Filántropo · Psicólogo Social · Coach Ontológico · Master en PNL", "hero_bio": "Acompaño a personas y equipos en procesos de transformación real. Con más de una década de experiencia integrando psicología social, PNL y coaching ontológico, trabajo desde la raíz de los comportamientos para generar cambios que duran.", "hero_btn1": "Conocer los programas", "hero_btn2": "Sobre mí", "hero_scroll": "Scroll", "sobre_label": "Quién soy", "sobre_title": "Una vida dedicada<br>a la <em>transformación</em>", "sobre_p1": "Soy Darian Roy Spalla, filántropo, locutor, psicólogo social, coach ontológico y de vida, y master en PNL. Mi camino profesional se construyó en la intersección entre la comunicación, la psicología y el desarrollo humano.", "sobre_p2": "Creo profundamente que cada persona tiene dentro suyo los recursos necesarios para transformar su realidad. Mi trabajo es ayudar a encontrarlos, activarlos y sostenerlos en el tiempo.", "sobre_p3": "Trabajo con vendedores inmobiliarios, personas que quieren rediseñar su vida, y líderes que quieren integrar su fe con su liderazgo.", "sobre_cta": "Hablemos", "stat1_num": "10+", "stat1_lbl": "Años de experiencia", "stat2_num": "500+", "stat2_lbl": "Personas acompañadas en procesos de transformación", "stat3_num": "PNL", "stat3_lbl": "Master Practitioner certificado", "stat4_num": "360°", "stat4_lbl": "Enfoque integral: mente, emoción y acción", "prog_label": "Programas de coaching", "prog_title": "Tres caminos.<br>Una <em>transformación real.</em>", "prog_desc": "Tres programas diseñados para transformaciones reales. Uno para profesionales inmobiliarios. Otro para personas que quieren vivir mejor. Otro para líderes que integran su fe.", "prog1_num": "Programa 1", "prog1_name": "Coaching <em>Inmobiliario</em>", "prog1_desc": "Para vendedores y equipos del sector inmobiliario que quieren vender más, generar más confianza y desarrollar una mentalidad ganadora. 6 módulos completos con casos reales.", "prog1_f1": "6 módulos con teoría, ejercicios y exámenes", "prog1_f2": "Casos reales del mercado inmobiliario", "prog1_f3": "Herramientas: scripts, banco de objeciones, plan 90 días", "prog1_f4": "Autodiagnóstico semanal y seguimiento con el coach", "prog1_f5": "Mensajería privada directa con Darian", "prog1_btn1": "CONSULTAR →", "prog1_btn2": "Acceder al portal", "prog2_num": "Programa 2", "prog2_name": "Coaching de <em>Vida</em>", "prog2_desc": "Para personas que quieren entenderse mejor, diseñar una vida con intención y romper los patrones que los frenan. 4 módulos profundos con herramientas de psicología práctica.", "prog2_f1": "4 módulos con ejercicios prácticos y exámenes", "prog2_f2": "Rueda de la vida, mapa de valores, visión a 10 años", "prog2_f3": "Técnicas de hábito ancla y cambio de identidad", "prog2_f4": "Sistema de revisión semanal personalizado", "prog2_f5": "Acompañamiento directo con Darian", "prog2_btn1": "CONSULTAR →", "prog2_btn2": "Acceder al portal", "prog3_num": "Programa 3", "prog3_name": "Liderazgo <em>Cristiano</em>", "prog3_desc": "Para líderes que quieren articular su fe con su liderazgo. 7 módulos que integran coaching ontológico, psicología del cambio y la Escritura para producir cambios reales.", "prog3_f1": "7 módulos: identidad, carácter, visión, escucha, multiplicación, presión y legado", "prog3_f2": "Versículos articulados con coaching real — fundamento, no decoración", "prog3_f3": "Modelos bíblicos: Moisés, Nehemías, Pablo, Jesús y David como casos reales", "prog3_f4": "Ejercicios prácticos con aplicación inmediata", "prog3_f5": "Formación de legado: liderazgo que trasciende", "prog3_btn1": "CONSULTAR →", "prog3_btn2": "Acceder al portal", "shared_title": "Incluido en los tres programas", "serv_label": "Lo que ofrezco", "serv_title": "Servicios <em>personalizados</em>", "serv1_badge": "Más solicitado", "serv1_name": "Coaching Inmobiliario", "serv1_desc": "Programa completo para equipos de ventas inmobiliarias. Desde la mentalidad hasta el cierre, con herramientas concretas y seguimiento real.", "serv1_f1": "Programa de 3 meses con 6 módulos", "serv1_f2": "Taller intensivo de lanzamiento", "serv1_f3": "Reuniones semanales de equipo", "serv1_f4": "Acompañamiento en campo", "serv1_f5": "Herramientas y recursos descargables", "serv1_btn": "Consultar programa", "serv2_name": "Coaching Individual", "serv2_desc": "Sesiones 1:1 para personas que quieren transformar algún área específica de su vida. Trabajo enfocado, profundo y con resultados medibles.", "serv2_f1": "Sesiones de 60 minutos", "serv2_f2": "Plan personalizado de trabajo", "serv2_f3": "Seguimiento entre sesiones", "serv2_f4": "Acceso a herramientas del portal", "serv2_btn": "Agendar sesión", "serv3_name": "Talleres y Capacitaciones", "serv3_desc": "Talleres grupales para empresas, iglesias y organizaciones. Contenido diseñado a medida según los objetivos del equipo.", "serv3_f1": "Talleres de 2 a 8 horas", "serv3_f2": "Contenido personalizado", "serv3_f3": "Dinámicas experienciales", "serv3_f4": "Material de seguimiento", "serv3_btn": "Solicitar taller", "libro_label": "Mi libro", "libro_title": "Líder con <em>Propósito</em>", "libro_desc": "Un libro que nace de años de experiencia acompañando procesos de transformación real. Desde las raíces del liderazgo interior hasta las herramientas concretas para ejercerlo en tu vida personal y profesional.", "libro_sub": "Disponible en formato Kindle en Amazon. Una lectura para quienes están listos para liderar desde adentro hacia afuera.", "libro_tag1": "📚 eBook Kindle", "libro_tag2": "🌎 Español", "libro_tag3": "⭐ Amazon", "libro_btn": "Conseguir el libro →", "test_section_label": "Interactivo", "test_title_main": "¿Qué tipo de líder sos?", "test_desc": "10 preguntas. 3 minutos. Descubrí tu perfil de liderazgo y qué herramientas necesitás para desarrollarlo.", "test_btn": "Empezar el test →", "test_q_label": "preguntas", "test_p_label": "perfiles", "test_m_label": "minutos", "test_result_title": "Tu perfil", "test_result_rec": "Lo que te recomiendo", "test_cta": "Hablar con Darian →", "test_retry": "Repetir el test", "mp_section_label": "Inscribite ahora", "mp_title": "Elegí tu programa y <em>empezá hoy</em>", "mp_desc": "Elegí tu programa y comenzá tu transformación hoy.", "mp_btn": "Pagar con MercadoPago", "mp_doubt": "¿Dudas? Consultá por WhatsApp", "mp_footer": "Pagos seguros procesados por MercadoPago · Acepta tarjetas de débito y crédito, transferencia y efectivo en todo el mundo", "mp_alt": "¿Preferís pagar por otro medio?", "mp_alt_link": "Escribinos", "prog1_short": "6 módulos · Casos reales · Herramientas prácticas", "prog2_short": "4 módulos · Psicología práctica · Cambio real", "prog3_short": "7 módulos · Fe y coaching · Liderazgo con propósito", "test_label": "Testimonios", "test_testimonios_title": "Lo que dicen quienes<br><em>ya trabajaron</em> conmigo", "contacto_label": "Contacto", "contacto_title": "Hablemos y <em>empecemos</em>", "contacto_desc": "Si querés saber más sobre el programa de coaching, agendar una sesión o simplemente hacer una consulta, escribime. Respondo personalmente.", "contacto_wa": "WhatsApp", "contacto_wa_sub": "Escribime directo", "contacto_email_label": "Email", "contacto_form_name": "Nombre", "contacto_form_email": "Email", "contacto_form_phone": "Teléfono / WhatsApp", "contacto_form_interest": "Me interesa", "contacto_opt0": "Seleccioná una opción", "contacto_opt1": "Coaching Inmobiliario", "contacto_opt2": "Coaching Ontológico / de Vida", "contacto_opt3": "Taller o Capacitación", "contacto_opt4": "Locución y Oratoria", "contacto_opt5": "Consulta general", "contacto_form_msg": "Tu mensaje", "contacto_form_btn": "Continuar por WhatsApp", "portal_title": "¿Ya sos parte del programa?", "portal_desc": "Accedé al portal privado con tus módulos, herramientas y seguimiento personalizado.", "portal_btn": "Entrar al portal →", "role_pills": ["Filántropo", "Locutor", "Psicólogo Social", "Coach Ontológico", "Coach de Vida", "Master en PNL"], "testimonial1_text": "\"El proceso con Darian me cambió la forma de ver las ventas. Dejé de tener miedo al rechazo y empecé a cerrar con mucha más confianza.\"", "testimonial2_text": "\"Nuestro equipo creció un 40% en resultados en el primer trimestre del programa. Las herramientas que nos da Darian son prácticas y concretas.\"", "testimonial3_text": "\"El coaching de vida con Darian me ayudó a salir de un momento muy difícil. Su enfoque es profundo, humano y siempre orientado a la acción.\"", "test1_name": "María G.", "test1_role": "Vendedora inmobiliaria", "test2_name": "Javier R.", "test2_role": "Gerente comercial", "test3_name": "Ana L.", "test3_role": "Empresaria"}, "en": {"nav_sobre": "About", "nav_coaching": "Programs", "nav_servicios": "Services", "nav_libro": "My book", "nav_test": "Test", "nav_inscribite": "Enroll", "nav_contacto": "Contact", "nav_portal": "Portal", "nav_cta": "Let's work together", "hero_roles": "Philanthropist · Social Psychologist · Ontological Coach · NLP Master", "hero_bio": "I guide people and teams through real transformation processes. With over a decade of experience integrating social psychology, NLP and ontological coaching, I work at the root of behaviors to generate lasting change.", "hero_btn1": "Explore programs", "hero_btn2": "About me", "hero_scroll": "Scroll", "sobre_label": "Who I am", "sobre_title": "A life dedicated<br>to <em>transformation</em>", "sobre_p1": "I'm Darian Roy Spalla, philanthropist, broadcaster, social psychologist, ontological and life coach, and NLP master. My professional path was built at the intersection of communication, psychology and human development.", "sobre_p2": "I deeply believe that every person carries within themselves the resources needed to transform their reality. My work is to help find them, activate them, and sustain them over time.", "sobre_p3": "I work with real estate professionals, people who want to redesign their lives, and leaders who want to integrate their faith with their leadership.", "sobre_cta": "Let's talk", "stat1_num": "10+", "stat1_lbl": "Years of experience", "stat2_num": "500+", "stat2_lbl": "People guided through transformation", "stat3_num": "NLP", "stat3_lbl": "Certified Master Practitioner", "stat4_num": "360°", "stat4_lbl": "Integral approach: mind, emotion and action", "prog_label": "Coaching programs", "prog_title": "Three paths.<br>One <em>real transformation.</em>", "prog_desc": "Three programs designed for real transformations. One for real estate professionals. One for people who want to live better. One for leaders who integrate their faith.", "prog1_num": "Program 1", "prog1_name": "Real Estate <em>Coaching</em>", "prog1_desc": "For real estate agents and teams who want to sell more, build greater confidence, and develop a winning mindset. 6 complete modules with real cases.", "prog1_f1": "6 modules with theory, exercises and exams", "prog1_f2": "Real cases from the real estate market", "prog1_f3": "Tools: scripts, objection bank, 90-day plan", "prog1_f4": "Weekly self-assessment and coach follow-up", "prog1_f5": "Private direct messaging with Darian", "prog1_btn1": "INQUIRE →", "prog1_btn2": "Access portal", "prog2_num": "Program 2", "prog2_name": "Life <em>Coaching</em>", "prog2_desc": "For people who want to understand themselves better, design an intentional life, and break the patterns holding them back. 4 deep modules with practical psychology tools.", "prog2_f1": "4 modules with practical exercises and exams", "prog2_f2": "Wheel of life, values map, 10-year vision", "prog2_f3": "Anchor habit techniques and identity change", "prog2_f4": "Personalized weekly review system", "prog2_f5": "Direct support from Darian", "prog2_btn1": "INQUIRE →", "prog2_btn2": "Access portal", "prog3_num": "Program 3", "prog3_name": "Christian <em>Leadership</em>", "prog3_desc": "For leaders who want to articulate their faith with their leadership. 7 modules integrating ontological coaching, psychology of change, and Scripture for real transformations.", "prog3_f1": "7 modules: identity, character, vision, listening, multiplication, pressure and legacy", "prog3_f2": "Scripture integrated with real coaching — foundation, not decoration", "prog3_f3": "Biblical models: Moses, Nehemiah, Paul, Jesus and David as real cases", "prog3_f4": "Practical exercises with immediate application", "prog3_f5": "Legacy formation: leadership that transcends", "prog3_btn1": "INQUIRE →", "prog3_btn2": "Access portal", "shared_title": "Included in all three programs", "serv_label": "What I offer", "serv_title": "Personalized <em>services</em>", "serv1_badge": "Most requested", "serv1_name": "Real Estate Coaching", "serv1_desc": "Complete program for real estate sales teams. From mindset to closing, with concrete tools and real follow-up.", "serv1_f1": "3-month program with 6 modules", "serv1_f2": "Intensive launch workshop", "serv1_f3": "Weekly team meetings", "serv1_f4": "Field coaching", "serv1_f5": "Downloadable tools and resources", "serv1_btn": "Inquire about program", "serv2_name": "Individual Coaching", "serv2_desc": "1:1 sessions for people who want to transform a specific area of their life. Focused, deep work with measurable results.", "serv2_f1": "60-minute sessions", "serv2_f2": "Personalized work plan", "serv2_f3": "Between-session support", "serv2_f4": "Access to portal tools", "serv2_btn": "Schedule session", "serv3_name": "Workshops & Training", "serv3_desc": "Group workshops for companies, churches and organizations. Content designed to fit the team's objectives.", "serv3_f1": "2 to 8-hour workshops", "serv3_f2": "Custom content", "serv3_f3": "Experiential dynamics", "serv3_f4": "Follow-up material", "serv3_btn": "Request workshop", "libro_label": "My book", "libro_title": "Leader with <em>Purpose</em>", "libro_desc": "A book born from years of experience accompanying real transformation processes. From the roots of inner leadership to concrete tools to exercise it in your personal and professional life.", "libro_sub": "Available in Kindle format on Amazon. A read for those ready to lead from the inside out.", "libro_tag1": "📚 eBook Kindle", "libro_tag2": "🌎 Spanish", "libro_tag3": "⭐ Amazon", "libro_btn": "Get the book →", "test_section_label": "Interactive", "test_title_main": "What type of leader are you?", "test_desc": "10 questions. 3 minutes. Discover your leadership profile and what tools you need to develop it.", "test_btn": "Start the test →", "test_q_label": "questions", "test_p_label": "profiles", "test_m_label": "minutes", "test_result_title": "Your profile", "test_result_rec": "My recommendation", "test_cta": "Talk to Darian →", "test_retry": "Retake the test", "mp_section_label": "Enroll now", "mp_title": "Choose your program and <em>start today</em>", "mp_desc": "Choose your program and start your transformation today.", "mp_btn": "Pay with MercadoPago", "mp_doubt": "Questions? Ask on WhatsApp", "mp_footer": "Secure payments processed by MercadoPago · Accepts credit & debit cards, bank transfer and cash worldwide", "mp_alt": "Prefer to pay another way?", "mp_alt_link": "Contact us", "prog1_short": "6 modules · Real cases · Practical tools", "prog2_short": "4 modules · Practical psychology · Real change", "prog3_short": "7 modules · Faith & coaching · Leadership with purpose", "test_label": "Testimonials", "test_testimonios_title": "What people say who've<br><em>already worked</em> with me", "contacto_label": "Contact", "contacto_title": "Let's talk and <em>get started</em>", "contacto_desc": "If you'd like to learn more about the coaching program, schedule a session, or simply ask a question, write to me. I respond personally.", "contacto_wa": "WhatsApp", "contacto_wa_sub": "Message me directly", "contacto_email_label": "Email", "contacto_form_name": "Name", "contacto_form_email": "Email", "contacto_form_phone": "Phone / WhatsApp", "contacto_form_interest": "I'm interested in", "contacto_opt0": "Select an option", "contacto_opt1": "Real Estate Coaching", "contacto_opt2": "Life / Ontological Coaching", "contacto_opt3": "Workshop or Training", "contacto_opt4": "Broadcasting & Public Speaking", "contacto_opt5": "General inquiry", "contacto_form_msg": "Your message", "contacto_form_btn": "Continue on WhatsApp", "portal_title": "Already part of the program?", "portal_desc": "Access your private portal with your modules, tools and personalized tracking.", "portal_btn": "Enter portal →", "role_pills": ["Philanthropist", "Broadcaster", "Social Psychologist", "Ontological Coach", "Life Coach", "NLP Master"], "testimonial1_text": "\"Darian's process changed the way I see sales. I stopped fearing rejection and started closing with much more confidence.\"", "testimonial2_text": "\"Our team grew 40% in results in the first quarter of the program. The tools Darian gives us are practical and concrete.\"", "testimonial3_text": "\"Life coaching with Darian helped me through a very difficult time. His approach is deep, human and always action-oriented.\"", "test1_name": "María G.", "test1_role": "Real estate agent", "test2_name": "Javier R.", "test2_role": "Sales manager", "test3_name": "Ana L.", "test3_role": "Entrepreneur"}, "pt": {"nav_sobre": "Sobre mim", "nav_coaching": "Programas", "nav_servicios": "Serviços", "nav_libro": "Meu livro", "nav_test": "Teste", "nav_inscribite": "Inscreva-se", "nav_contacto": "Contato", "nav_portal": "Portal", "nav_cta": "Vamos trabalhar juntos", "hero_roles": "Filantropo · Psicólogo Social · Coach Ontológico · Master em PNL", "hero_bio": "Acompanho pessoas e equipes em processos de transformação real. Com mais de uma década de experiência integrando psicologia social, PNL e coaching ontológico, trabalho na raiz dos comportamentos para gerar mudanças duradouras.", "hero_btn1": "Conhecer os programas", "hero_btn2": "Sobre mim", "hero_scroll": "Scroll", "sobre_label": "Quem sou", "sobre_title": "Uma vida dedicada<br>à <em>transformação</em>", "sobre_p1": "Sou Darian Roy Spalla, filantropo, locutor, psicólogo social, coach ontológico e de vida, e master em PNL. Minha trajetória profissional foi construída na interseção entre comunicação, psicologia e desenvolvimento humano.", "sobre_p2": "Acredito profundamente que cada pessoa carrega dentro de si os recursos necessários para transformar sua realidade. Meu trabalho é ajudar a encontrá-los, ativá-los e sustentá-los ao longo do tempo.", "sobre_p3": "Trabalho com profissionais do mercado imobiliário, pessoas que querem redesenhar suas vidas, e líderes que querem integrar sua fé com sua liderança.", "sobre_cta": "Vamos conversar", "stat1_num": "10+", "stat1_lbl": "Anos de experiência", "stat2_num": "500+", "stat2_lbl": "Pessoas acompanhadas em processos de transformação", "stat3_num": "PNL", "stat3_lbl": "Master Practitioner certificado", "stat4_num": "360°", "stat4_lbl": "Abordagem integral: mente, emoção e ação", "prog_label": "Programas de coaching", "prog_title": "Três caminhos.<br>Uma <em>transformação real.</em>", "prog_desc": "Três programas criados para transformações reais. Um para profissionais imobiliários. Um para pessoas que querem viver melhor. Um para líderes que integram sua fé.", "prog1_num": "Programa 1", "prog1_name": "Coaching <em>Imobiliário</em>", "prog1_desc": "Para corretores e equipes do setor imobiliário que querem vender mais, gerar mais confiança e desenvolver uma mentalidade vencedora. 6 módulos completos com casos reais.", "prog1_f1": "6 módulos com teoria, exercícios e exames", "prog1_f2": "Casos reais do mercado imobiliário", "prog1_f3": "Ferramentas: scripts, banco de objeções, plano 90 dias", "prog1_f4": "Autodiagnóstico semanal e acompanhamento com o coach", "prog1_f5": "Mensagens privadas diretas com Darian", "prog1_btn1": "CONSULTAR →", "prog1_btn2": "Acessar o portal", "prog2_num": "Programa 2", "prog2_name": "Coaching de <em>Vida</em>", "prog2_desc": "Para pessoas que querem se entender melhor, desenhar uma vida com intenção e romper os padrões que as freiam. 4 módulos profundos com ferramentas de psicologia prática.", "prog2_f1": "4 módulos com exercícios práticos e exames", "prog2_f2": "Roda da vida, mapa de valores, visão de 10 anos", "prog2_f3": "Técnicas de hábito âncora e mudança de identidade", "prog2_f4": "Sistema de revisão semanal personalizado", "prog2_f5": "Acompanhamento direto com Darian", "prog2_btn1": "CONSULTAR →", "prog2_btn2": "Acessar o portal", "prog3_num": "Programa 3", "prog3_name": "Liderança <em>Cristã</em>", "prog3_desc": "Para líderes que querem articular sua fé com sua liderança. 7 módulos que integram coaching ontológico, psicologia da mudança e as Escrituras para produzir transformações reais.", "prog3_f1": "7 módulos: identidade, caráter, visão, escuta, multiplicação, pressão e legado", "prog3_f2": "Versículos articulados com coaching real — fundamento, não decoração", "prog3_f3": "Modelos bíblicos: Moisés, Neemias, Paulo, Jesus e Davi como casos reais", "prog3_f4": "Exercícios práticos com aplicação imediata", "prog3_f5": "Formação de legado: liderança que transcende", "prog3_btn1": "CONSULTAR →", "prog3_btn2": "Acessar o portal", "shared_title": "Incluído nos três programas", "serv_label": "O que ofereço", "serv_title": "Serviços <em>personalizados</em>", "serv1_badge": "Mais solicitado", "serv1_name": "Coaching Imobiliário", "serv1_desc": "Programa completo para equipes de vendas imobiliárias. Da mentalidade ao fechamento, com ferramentas concretas e acompanhamento real.", "serv1_f1": "Programa de 3 meses com 6 módulos", "serv1_f2": "Workshop intensivo de lançamento", "serv1_f3": "Reuniões semanais de equipe", "serv1_f4": "Acompanhamento em campo", "serv1_f5": "Ferramentas e recursos para download", "serv1_btn": "Consultar programa", "serv2_name": "Coaching Individual", "serv2_desc": "Sessões 1:1 para pessoas que querem transformar uma área específica de suas vidas. Trabalho focado, profundo e com resultados mensuráveis.", "serv2_f1": "Sessões de 60 minutos", "serv2_f2": "Plano de trabalho personalizado", "serv2_f3": "Suporte entre sessões", "serv2_f4": "Acesso às ferramentas do portal", "serv2_btn": "Agendar sessão", "serv3_name": "Workshops e Treinamentos", "serv3_desc": "Workshops em grupo para empresas, igrejas e organizações. Conteúdo desenhado sob medida para os objetivos da equipe.", "serv3_f1": "Workshops de 2 a 8 horas", "serv3_f2": "Conteúdo personalizado", "serv3_f3": "Dinâmicas experienciais", "serv3_f4": "Material de acompanhamento", "serv3_btn": "Solicitar workshop", "libro_label": "Meu livro", "libro_title": "Líder com <em>Propósito</em>", "libro_desc": "Um livro que nasce de anos de experiência acompanhando processos de transformação real. Das raízes da liderança interior às ferramentas concretas para exercê-la em sua vida pessoal e profissional.", "libro_sub": "Disponível em formato Kindle na Amazon. Uma leitura para quem está pronto para liderar de dentro para fora.", "libro_tag1": "📚 eBook Kindle", "libro_tag2": "🌎 Espanhol", "libro_tag3": "⭐ Amazon", "libro_btn": "Obter o livro →", "test_section_label": "Interativo", "test_title_main": "Que tipo de líder você é?", "test_desc": "10 perguntas. 3 minutos. Descubra seu perfil de liderança e quais ferramentas você precisa para desenvolvê-lo.", "test_btn": "Começar o teste →", "test_q_label": "perguntas", "test_p_label": "perfis", "test_m_label": "minutos", "test_result_title": "Seu perfil", "test_result_rec": "O que recomendo", "test_cta": "Falar com Darian →", "test_retry": "Refazer o teste", "mp_section_label": "Inscreva-se agora", "mp_title": "Escolha seu programa e <em>comece hoje</em>", "mp_desc": "Escolha seu programa e comece sua transformação hoje.", "mp_btn": "Pagar com MercadoPago", "mp_doubt": "Dúvidas? Pergunte pelo WhatsApp", "mp_footer": "Pagamentos seguros processados pelo MercadoPago · Aceita cartões de crédito e débito, transferência e dinheiro em todo o mundo", "mp_alt": "Prefere pagar de outra forma?", "mp_alt_link": "Fale conosco", "prog1_short": "6 módulos · Casos reais · Ferramentas práticas", "prog2_short": "4 módulos · Psicologia prática · Mudança real", "prog3_short": "7 módulos · Fé e coaching · Liderança com propósito", "test_label": "Depoimentos", "test_testimonios_title": "O que dizem quem<br><em>já trabalhou</em> comigo", "contacto_label": "Contato", "contacto_title": "Vamos conversar e <em>começar</em>", "contacto_desc": "Se quiser saber mais sobre o programa de coaching, agendar uma sessão ou simplesmente fazer uma consulta, escreva para mim. Respondo pessoalmente.", "contacto_wa": "WhatsApp", "contacto_wa_sub": "Escreva diretamente", "contacto_email_label": "Email", "contacto_form_name": "Nome", "contacto_form_email": "Email", "contacto_form_phone": "Telefone / WhatsApp", "contacto_form_interest": "Tenho interesse em", "contacto_opt0": "Selecione uma opção", "contacto_opt1": "Coaching Imobiliário", "contacto_opt2": "Coaching Ontológico / de Vida", "contacto_opt3": "Workshop ou Treinamento", "contacto_opt4": "Locução e Oratória", "contacto_opt5": "Consulta geral", "contacto_form_msg": "Sua mensagem", "contacto_form_btn": "Continuar pelo WhatsApp", "portal_title": "Já faz parte do programa?", "portal_desc": "Acesse o portal privado com seus módulos, ferramentas e acompanhamento personalizado.", "portal_btn": "Entrar no portal →", "role_pills": ["Filantropo", "Locutor", "Psicólogo Social", "Coach Ontológico", "Coach de Vida", "Master em PNL"], "testimonial1_text": "\"O processo com Darian mudou minha forma de ver as vendas. Parei de ter medo da rejeição e comecei a fechar com muito mais confiança.\"", "testimonial2_text": "\"Nossa equipe cresceu 40% em resultados no primeiro trimestre do programa. As ferramentas que o Darian nos dá são práticas e concretas.\"", "testimonial3_text": "\"O coaching de vida com Darian me ajudou a sair de um momento muito difícil. Sua abordagem é profunda, humana e sempre orientada para a ação.\"", "test1_name": "María G.", "test1_role": "Corretora imobiliária", "test2_name": "Javier R.", "test2_role": "Gerente comercial", "test3_name": "Ana L.", "test3_role": "Empresária"}}
+
+var currentLang = 'es';
+
+function detectLang(){
+  var saved = localStorage.getItem('ds_lang');
+  if(saved && TRANSLATIONS[saved]) return saved;
+  var nav = navigator.language || navigator.userLanguage || 'es';
+  nav = nav.toLowerCase().slice(0,2);
+  if(nav === 'pt') return 'pt';
+  if(nav === 'en') return 'en';
+  return 'es';
+}
+
+function setLang(lang){
+  if(!TRANSLATIONS[lang]) return;
+  currentLang = lang;
+  localStorage.setItem('ds_lang', lang);
+  applyTranslations();
+  // Update buttons
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.id === 'lang-' + lang);
+  });
+  // Update html lang attribute
+  document.documentElement.lang = lang;
+}
+
+function applyTranslations(){
+  var T=TRANSLATIONS[currentLang];
+  if(!T)return;
+
+  // Text nodes
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key=el.getAttribute('data-i18n');
+    if(T[key]!==undefined)el.textContent=T[key];
+  });
+
+  // HTML nodes
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+    var key=el.getAttribute('data-i18n-html');
+    if(T[key]!==undefined)el.innerHTML=T[key];
+  });
+
+  // Placeholder attributes
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+    var key=el.getAttribute('data-i18n-ph');
+    if(T[key]!==undefined)el.placeholder=T[key];
+  });
+
+  // Role pills
+  if(T.role_pills){
+    document.querySelectorAll('[data-i18n-role]').forEach(function(el){
+      var i=parseInt(el.getAttribute('data-i18n-role'));
+      if(T.role_pills[i])el.textContent=T.role_pills[i];
+    });
+  }
+
+  // Mobile menu links
+  document.querySelectorAll('.mobile-menu a[href]').forEach(function(a){
+    var href=a.getAttribute('href');
+    if(href==='#sobre'&&T.nav_sobre)a.textContent=T.nav_sobre;
+    if(href==='#coaching'&&T.nav_coaching)a.textContent=T.nav_coaching;
+    if(href==='#servicios'&&T.nav_servicios)a.textContent=T.nav_servicios;
+    if(href==='#libro'&&T.nav_libro)a.textContent=T.nav_libro;
+    if(href==='#test'&&T.nav_test)a.textContent=T.nav_test;
+    if(href==='#inscribite'&&T.nav_inscribite)a.textContent=T.nav_inscribite;
+    if(href==='#contacto'&&T.nav_contacto)a.textContent=T.nav_contacto;
+    if(href==='portal.html'&&T.nav_portal)a.textContent=T.nav_portal;
+  });
+
+  // Shared tools items
+  if(T.shared_tools){
+    var toolItems=document.querySelectorAll('.tools-grid .tool-item .tool-name');
+    toolItems.forEach(function(el,i){if(T.shared_tools[i])el.textContent=T.shared_tools[i];});
+  }
+
+  // Hero bio (paragraph)
+  var heroBio=document.querySelector('.hero-bio');
+  if(heroBio&&T.hero_bio)heroBio.textContent=T.hero_bio;
+
+  // Sobre title
+  var sobreTitle=document.querySelector('#sobre .section-title');
+  if(sobreTitle&&T.sobre_title)sobreTitle.innerHTML=T.sobre_title;
+
+  // Servicios title  
+  var servTitle=document.querySelector('#servicios .section-title');
+  if(servTitle&&T.serv_title)servTitle.innerHTML=T.serv_title;
+
+  // Libro
+  var libroTitle=document.querySelector('#libro h2');
+  if(libroTitle&&T.libro_title)libroTitle.innerHTML=T.libro_title;
+  var libroDesc=document.querySelectorAll('#libro .reveal > p');
+  if(libroDesc[0]&&T.libro_desc)libroDesc[0].textContent=T.libro_desc;
+  if(libroDesc[1]&&T.libro_sub)libroDesc[1].textContent=T.libro_sub;
+
+  // Test section
+  var testTitle=document.querySelector('#test h2');
+  if(testTitle&&T.test_title_main)testTitle.innerHTML='\u00bfQu\u00e9 tipo de <em>l\u00edder</em> '+(currentLang==='es'?'sos?':currentLang==='en'?'are you?':'voc\u00ea \u00e9?');
+  var testDesc=document.querySelector('#test .reveal > p');
+  if(testDesc&&T.test_desc)testDesc.textContent=T.test_desc;
+
+  // Select options
+  var sel=document.querySelector('#contacto select');
+  if(sel){
+    var opts=[T.contacto_opt0,T.contacto_opt1,T.contacto_opt2,T.contacto_opt3,T.contacto_opt4,T.contacto_opt5];
+    sel.querySelectorAll('option').forEach(function(opt,i){if(opts[i])opt.textContent=opts[i];});
+  }
+
+  // Form phone placeholder
+  var phoneEl=document.querySelector('input[placeholder*="WhatsApp"]');
+  if(phoneEl&&T.contacto_form_phone)phoneEl.placeholder=T.contacto_form_phone;
+
+  // Servicios cards
+  var servCards=document.querySelectorAll('#servicios .servicios-grid > div');
+  if(servCards.length>=1){
+    var s1p=servCards[0].querySelector('p');if(s1p&&T.serv1_desc)s1p.textContent=T.serv1_desc;
+  }
+
+  applyProgTranslations(T);
+}
+
+function applyProgTranslations(T){
+  // Program card names
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+    var key=el.getAttribute('data-i18n-html');
+    if(T[key]!==undefined)el.innerHTML=T[key];
+  });
+
+  // Section titles with HTML
+  var progTitle=document.querySelector('[data-i18n-html="prog_title"]');
+  if(progTitle)progTitle.innerHTML=T.prog_title||'';
+  var testTitle=document.querySelector('[data-i18n-html="test_testimonios_title"]');
+  if(testTitle)testTitle.innerHTML=T.test_testimonios_title||'';
+  var contactoTitle=document.querySelector('[data-i18n-html="contacto_title"]');
+  if(contactoTitle)contactoTitle.innerHTML=T.contacto_title||'';
+
+  // Program cards
+  var cards=document.querySelectorAll('#coaching .prog-grid > div');
+  if(cards.length>=3){
+    // Card 1
+    var p1=cards[0].querySelector('p');if(p1)p1.textContent=T.prog1_desc||'';
+    var i1=cards[0].querySelectorAll('div[style*="align-items:center"] span:last-child');
+    [T.prog1_f1,T.prog1_f2,T.prog1_f3,T.prog1_f4,T.prog1_f5].forEach(function(txt,i){if(i1[i]&&txt)i1[i].textContent=txt;});
+    var b1=cards[0].querySelectorAll('a');
+    if(b1[0])b1[0].textContent=T.prog1_btn1||'';
+    if(b1[1])b1[1].textContent=T.prog1_btn2||'';
+    // Card 2
+    var p2=cards[1].querySelector('p');if(p2)p2.textContent=T.prog2_desc||'';
+    var i2=cards[1].querySelectorAll('div[style*="align-items:center"] span:last-child');
+    [T.prog2_f1,T.prog2_f2,T.prog2_f3,T.prog2_f4,T.prog2_f5].forEach(function(txt,i){if(i2[i]&&txt)i2[i].textContent=txt;});
+    var b2=cards[1].querySelectorAll('a');
+    if(b2[0])b2[0].textContent=T.prog2_btn1||'';
+    if(b2[1])b2[1].textContent=T.prog2_btn2||'';
+    // Card 3
+    var p3=cards[2].querySelector('p');if(p3)p3.textContent=T.prog3_desc||'';
+    var i3=cards[2].querySelectorAll('div[style*="align-items:center"] span:last-child');
+    [T.prog3_f1,T.prog3_f2,T.prog3_f3,T.prog3_f4,T.prog3_f5].forEach(function(txt,i){if(i3[i]&&txt)i3[i].textContent=txt;});
+    var b3=cards[2].querySelectorAll('a');
+    if(b3[0])b3[0].textContent=T.prog3_btn1||'';
+    if(b3[1])b3[1].textContent=T.prog3_btn2||'';
+  }
+
+  // Servicios cards
+  var servCards=document.querySelectorAll('#servicios .servicios-grid > div');
+  if(servCards.length>=3){
+    var s1desc=servCards[0].querySelector('p');if(s1desc)s1desc.textContent=T.serv1_desc||'';
+    var s1items=servCards[0].querySelectorAll('li');
+    [T.serv1_f1,T.serv1_f2,T.serv1_f3,T.serv1_f4,T.serv1_f5].forEach(function(txt,i){if(s1items[i]&&txt)s1items[i].textContent=txt;});
+    var s2desc=servCards[1].querySelector('p');if(s2desc)s2desc.textContent=T.serv2_desc||'';
+    var s2name=servCards[1].querySelector('.serv-name');if(s2name)s2name.textContent=T.serv2_name||'';
+    var s3desc=servCards[2].querySelector('p');if(s3desc)s3desc.textContent=T.serv3_desc||'';
+    var s3name=servCards[2].querySelector('.serv-name');if(s3name)s3name.textContent=T.serv3_name||'';
+  }
+
+  // MP section short descriptions
+  var mpCards=document.querySelectorAll('#inscribite .mp-grid > div');
+  if(mpCards.length>=3){
+    var sh=[T.prog1_short,T.prog2_short,T.prog3_short];
+    mpCards.forEach(function(card,i){
+      var desc=card.querySelector('div[data-i18n]');
+      if(!desc)desc=card.querySelectorAll('div')[3];
+      if(desc&&sh[i])desc.textContent=sh[i];
+    });
+  }
+
+  // Libro title
+  var libroTitle=document.querySelector('#libro h2');
+  if(libroTitle)libroTitle.innerHTML=T.libro_title||'';
+  var libroDesc=document.querySelector('#libro p');
+  if(libroDesc)libroDesc.textContent=T.libro_desc||'';
+
+  // Test section
+  var testMain=document.querySelector('#test h2');
+  if(testMain)testMain.textContent=T.test_title_main||'';
+  var testDesc=document.querySelector('#test .test-desc, #test p');
+  if(testDesc)testDesc.textContent=T.test_desc||'';
+
+  // Select options (contacto form)
+  var sel=document.querySelector('select[name="interes"], #contacto select');
+  if(sel){
+    var opts=[T.contacto_opt0,T.contacto_opt1,T.contacto_opt2,T.contacto_opt3,T.contacto_opt4,T.contacto_opt5];
+    sel.querySelectorAll('option').forEach(function(opt,i){if(opts[i])opt.textContent=opts[i];});
+  }
+
+  // Form label for phone
+  var phonePh=document.querySelector('[data-i18n-ph="contacto_form_phone"]');
+  if(phonePh)phonePh.placeholder=T.contacto_form_phone||'';
+
+  // Libro tags
+  var tags=document.querySelectorAll('#libro .libro-tag, #libro span[class*="tag"]');
+  if(tags.length>=3){
+    if(T.libro_tag1)tags[0].textContent=T.libro_tag1;
+    if(T.libro_tag2)tags[1].textContent=T.libro_tag2;
+    if(T.libro_tag3)tags[2].textContent=T.libro_tag3;
+  }
+}
+
+// Init on load
+function trackMP(progKey){
+  if(typeof gtag !== 'undefined') gtag('event', 'mp_click', {program: progKey});
+  // Save pending registration so gracias.html can create the account
+  var progMap = {'prog1':'prog1','prog2':'prog2','prog3':'prog3'};
+  var progId = progMap[progKey] || 'prog1';
+  // Try to get user email for pre-filling
+  var email = '';
+  var emailEl = document.querySelector('#contacto input[type="email"]');
+  if(emailEl) email = emailEl.value.trim();
+  var nameEl = document.querySelector('#contacto input[placeholder*="ombre"]');
+  var name = nameEl ? nameEl.value.trim() : '';
+  try{
+    sessionStorage.setItem('mp_pending', JSON.stringify({
+      progId: progId,
+      email: email,
+      name: name,
+      ts: Date.now()
+    }));
+  }catch(e){}
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  var lang = detectLang();
+  currentLang = lang;
+  applyTranslations();
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.id === 'lang-' + lang);
+  });
+  document.documentElement.lang = lang;
+});
+
+</script>
+
+// Load dynamic program prices from portal config
+(function loadProgPrices(){
+  try {
+    var db = JSON.parse(localStorage.getItem('coaching_portal') || '{}');
+    var progs = db.programs || [];
+    // Default prog IDs
+    var progMap = {prog1:'prog1', prog2:'prog2', prog3:'prog3'};
+    progs.forEach(function(prog, i){
+      var key = 'prog' + (i+1);
+      // Price display
+      var priceBox = document.getElementById('mp-price-' + key);
+      var priceVal = document.getElementById('mp-price-val-' + key);
+      var priceDesc = document.getElementById('mp-price-desc-' + key);
+      if(priceVal && prog.precio){
+        priceVal.textContent = prog.precio;
+        if(priceDesc && prog.precioDesc) priceDesc.textContent = prog.precioDesc;
+        if(priceBox) priceBox.style.display = 'block';
+      }
+      // MP link
+      var btn = document.getElementById('mp-btn-' + key);
+      if(btn && prog.mpLink){
+        btn.href = prog.mpLink;
+      }
+    });
+  } catch(e) {}
+})();
+
+<script src="refinement.js"></script>
+</body>
+</html>
