@@ -1,25 +1,8 @@
 {
-  "name": "darian-coaching-web",
-  "main": "worker.js",
-  "compatibility_date": "2026-09-30",
-  "assets": {
-    "directory": "./public",
-    "binding": "ASSETS",
-    "run_worker_first": [
-      "/api/*"
-    ]
-  },
-  "observability": {
-    "enabled": true
-  },
-  "ratelimits": [
-    {
-      "name": "LOGIN_LIMITER",
-      "namespace_id": "1001",
-      "simple": {
-        "limit": 10,
-        "period": 60
-      }
-    }
-  ]
+ "$schema": "node_modules/wrangler/config-schema.json",
+ "name": "darianspalla",
+ "pages_build_output_dir": "./dist",
+ "compatibility_date": "2026-10-01",
+ "compatibility_flags": ["nodejs_compat"],
+ "d1_databases": [{"binding":"DB","database_name":"darianspalla-production","database_id":"a4901679-f9bd-42a5-886e-88ee22eff741"}]
 }

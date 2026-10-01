@@ -1,2 +1,7 @@
-portal-private/
-config.php
+node_modules/
+dist/
+.wrangler/
+.dev.vars
+.env
+.env.*
+config/portal-config.php

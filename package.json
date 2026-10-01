@@ -1,13 +1,17 @@
 {
-  "name": "darian-coaching-web",
+  "name": "darianspalla-web",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "check": "wrangler deploy --dry-run"
+    "build": "node scripts/build.mjs",
+    "dev": "wrangler pages dev dist",
+    "test": "node scripts/test-local.mjs",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name darianspalla --branch main"
   },
   "devDependencies": {
-    "wrangler": "^4.0.0"
+    "wrangler": "4.145.0",
+    "@cloudflare/workers-types": "5.20261001.1",
+    "@playwright/test": "1.63.0",
+    "esbuild": "0.28.1"
   }
 }
