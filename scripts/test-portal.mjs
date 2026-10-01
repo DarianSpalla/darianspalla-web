@@ -6,7 +6,7 @@ async function run(role){
  const writes=[],elements=new Map();
  const element=id=>{if(!elements.has(id))elements.set(id,{value:id==='login-email'?'student@example.com':'long-password',style:{},classList:{add(){},remove(){}},setAttribute(){}});return elements.get(id);};
  let logged=false;
- const context={console,CU:null,SYNC_CONFIG:{},CF_WORKER_URL:'',document:{createElement:()=>element('status'),body:{appendChild(){}},getElementById:element},sessionStorage:{removeItem(){}},localStorage:{removeItem(){}},location:{reload(){}},showPortal(){},setTimeout:(fn,delay)=>{if(delay===300)return 1;return setTimeout(fn,delay===2000?0:delay);},clearTimeout(){},alert(){},addEventListener(){}};
+ const context={console,CU:null,SYNC_CONFIG:{},CF_WORKER_URL:'',document:{createElement:()=>element('status'),body:{appendChild(){}},getElementById:element},sessionStorage:{removeItem(){}},localStorage:{getItem(){return null;},setItem(){},removeItem(){}},location:{reload(){}},showPortal(){},setTimeout:(fn,delay)=>{if(delay===300)return 1;return setTimeout(fn,delay===2000?0:delay);},clearTimeout(){},alert(){},addEventListener(){}};
  context.fetch=async(url,options)=>{
   const route=new URL(url,'https://example.com').searchParams.get('route');
   if(route==='me'&&!logged)return {ok:false,status:401,json:async()=>({error:'login'})};

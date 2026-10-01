@@ -63,7 +63,8 @@
  const originalAlert=window.alert.bind(window);
  window.alert=function(message){if(CU&&diff().length){flush().then(()=>originalAlert(message)).catch(e=>originalAlert(e.message));}else originalAlert(message);};
  window.addEventListener('beforeunload',event=>{if(busy||diff().length){event.preventDefault();event.returnValue='';}});
- for(const key of ['coaching_portal','cdb3','coaching_db2','coaching_db'])localStorage.removeItem(key);
+ // Preserve old progress for a future explicit migration; remove legacy plaintext passwords.
+ for(const key of ['coaching_portal','cdb3','coaching_db2','coaching_db']){try{const old=JSON.parse(localStorage.getItem(key)||'null');if(old){for(const user of Object.values(old.users||{}))delete user.pass;localStorage.setItem(key,JSON.stringify(old));}}catch(e){console.warn('No se pudo limpiar el archivo local anterior.');}}
  sessionStorage.removeItem('ds_token');sessionStorage.removeItem('cu3');
  api('me').then(enter).catch(e=>{if(e.status!==401)notify(e.message);});
 })();
