@@ -1,0 +1,16 @@
+name: Portal checks
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: pdo_mysql
+      - run: php -l public/api/index.php && php -l config/portal-config.example.php
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check public/hostinger-portal.js && node scripts/test-portal.mjs

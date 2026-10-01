@@ -470,7 +470,7 @@ input, textarea, select {
         <div class="alert alert-ok" id="prog-found" style="margin-bottom:14px;"></div>
         <div class="field"><label class="lbl">Nombre completo</label><input type="text" class="inp" id="reg-name" placeholder="Tu nombre y apellido"></div>
         <div class="field"><label class="lbl">Email</label><input type="email" class="inp" id="reg-email" placeholder="tu@email.com"></div>
-        <div class="field"><label class="lbl">Contraseña</label><input type="password" class="inp" id="reg-pass" placeholder="Mínimo 6 caracteres" onkeydown="if(event.key==='Enter')doRegister()"></div>
+        <div class="field"><label class="lbl">Contraseña</label><input type="password" class="inp" id="reg-pass" placeholder="Mínimo 10 caracteres" onkeydown="if(event.key==='Enter')doRegister()"></div>
         <button class="btn-primary" onclick="doRegister()"><span data-pi18n="reg_btn">Crear mi cuenta</span></button>
         <p class="code-hint">¿No tenés código? Pedíselo a <span>Darian</span> para unirte a un programa.</p>
       </div>
@@ -1382,21 +1382,6 @@ var ALL_HERRAMIENTAS=[
 function getDB(){try{return JSON.parse(localStorage.getItem('coaching_portal')||'{}')}catch(e){return{}}}
 function saveDB(db){localStorage.setItem('coaching_portal',JSON.stringify(db))}
 
-// Migrar datos de versiones anteriores del portal
-(function migrar(){
-  var keys=['cdb3','coaching_db2','coaching_db'];
-  var dest=JSON.parse(localStorage.getItem('coaching_portal')||'{}');
-  keys.forEach(function(k){
-    try{
-      var old=JSON.parse(localStorage.getItem(k)||'{}');
-      if(old.users){Object.assign(dest.users=dest.users||{},old.users);}
-      if(old.diags){dest.diags=dest.diags||{};Object.keys(old.diags).forEach(function(e){if(!dest.diags[e])dest.diags[e]=old.diags[e];});}
-      if(old.access){dest.access=dest.access||{};Object.assign(dest.access,old.access);}
-      if(old.programs&&!dest.programs)dest.programs=old.programs;
-    }catch(e){}
-  });
-  localStorage.setItem('coaching_portal',JSON.stringify(dest));
-})();
 function getUsers(){var db=getDB();return db.users||{}}
 function saveUsers(u){var db=getDB();db.users=u;saveDB(db)}
 function getProgs(){
@@ -1484,13 +1469,6 @@ window.onerror=function(msg,src,line,col,err){
 };
 var editingEmail=null;
 var tempAccess={modulos:[],herramientas:[],videos:[],frases:[]};
-try{CU=sessionStorage.getItem('ds_token')?JSON.parse(sessionStorage.getItem('cu3')||'null'):null;}catch(e){}
-if(CU){
-  // Simple check: if session exists, show portal
-  // Admin can revoke access manually from the panel
-  showPortal();
-}
-
 function previewCode(val){
   val=val.trim().toUpperCase();
   var p=getProgs().find(function(x){return x.code===val;});
@@ -1556,7 +1534,7 @@ function legacyRegisterDisabled(){
   if(!prog){err.textContent='Código "'+code+'" incorrecto. Verificá con Darian.';err.classList.add('show');return;}
   if(!name){err.textContent='Ingresá tu nombre completo.';err.classList.add('show');return;}
   if(!email||email.indexOf('@')<0){err.textContent='Ingresá un email válido.';err.classList.add('show');return;}
-  if(!pass||pass.length<6){err.textContent='La contraseña debe tener al menos 6 caracteres.';err.classList.add('show');return;}
+  if(!pass||pass.length<6){err.textContent='La contraseña debe tener al menos 10 caracteres.';err.classList.add('show');return;}
 
   var u=getUsers();
   if(u[email]){err.textContent='Ese email ya está registrado. Usá la pestaña Ingresar.';err.classList.add('show');return;}
@@ -2312,8 +2290,8 @@ function saveUsuario(){
   if(!u[editingEmail])return;
   u[editingEmail].name=newName;
   if(progId){u[editingEmail].prog=progId;u[editingEmail].progName=progName;}
-  if(newPass.length>=6){u[editingEmail].pass=newPass;}
-  else if(newPass.length>0&&newPass.length<6){err.textContent='La contraseña debe tener al menos 6 caracteres.';err.classList.add('show');return;}
+  if(newPass.length>=10){u[editingEmail].pass=newPass;}
+  else if(newPass.length>0&&newPass.length<10){err.textContent='La contraseña debe tener al menos 10 caracteres.';err.classList.add('show');return;}
   saveUsers(u);
 
   // Save access - preserve existing, update byProg entries
@@ -4861,7 +4839,7 @@ function saveNewUser(){
 
   if(!name){err.textContent='Ingresá el nombre.';err.classList.add('show');return;}
   if(!email||email.indexOf('@')<0){err.textContent='Ingresá un email válido.';err.classList.add('show');return;}
-  if(!pass||pass.length<6){err.textContent='La contraseña debe tener al menos 6 caracteres.';err.classList.add('show');return;}
+  if(!pass||pass.length<6){err.textContent='La contraseña debe tener al menos 10 caracteres.';err.classList.add('show');return;}
 
   var u=getUsers();
   if(u[email]){err.textContent='Ese email ya existe. Usá "Gestionar" para editarlo.';err.classList.add('show');return;}
@@ -4932,7 +4910,7 @@ function formatDate(iso){
     <p style="font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.7;">Agregá un alumno manualmente. Útil cuando se registró desde otro dispositivo o pagó por otro medio.</p>
     <div class="field"><label class="lbl">Nombre completo</label><input type="text" class="inp" id="au-name" placeholder="Ej: María Salviano"></div>
     <div class="field"><label class="lbl">Email</label><input type="email" class="inp" id="au-email" placeholder="email@ejemplo.com"></div>
-    <div class="field"><label class="lbl">Contraseña</label><input type="text" class="inp" id="au-pass" placeholder="Mínimo 6 caracteres"></div>
+    <div class="field"><label class="lbl">Contraseña</label><input type="text" class="inp" id="au-pass" placeholder="Mínimo 10 caracteres"></div>
     <div class="field"><label class="lbl">Programa</label><select class="inp" id="au-prog"></select></div>
     <div class="alert alert-err" id="au-err" style="margin-top:8px;"></div>
     <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
@@ -4942,5 +4920,6 @@ function formatDate(iso){
   </div>
 </div>
 
+<script src="hostinger-portal.js"></script>
 </body>
 </html>
